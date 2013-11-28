@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 Country.create([{ :name => "Afghanistan", :alpha_2 => "AF", :alpha_3 => "AFG", :numeric => "004" },
                 { :name => "Albania", :alpha_2 => "AL", :alpha_3 => "ALB", :numeric => "008" },
                 { :name => "Algeria", :alpha_2 => "DZ", :alpha_3 => "DZA", :numeric => "012" },

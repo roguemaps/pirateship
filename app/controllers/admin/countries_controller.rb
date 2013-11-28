@@ -28,8 +28,8 @@ class Admin::CountriesController < ApplicationController
 
     respond_to do |format|
       if @country.save
-        format.html { redirect_to [:admin, @country], notice: 'Country was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @country }
+        format.html { redirect_to admin_countries_url, notice: 'Country was successfully created.' }
+        format.json { render action: 'index', status: :created, location: @country }
       else
         format.html { render action: 'new' }
         format.json { render json: @country.errors, status: :unprocessable_entity }
@@ -42,7 +42,7 @@ class Admin::CountriesController < ApplicationController
   def update
     respond_to do |format|
       if @country.update(country_params)
-        format.html { redirect_to [:admin, @country], notice: 'Country was successfully updated.' }
+        format.html { redirect_to admin_countries_url, notice: 'Country was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -69,6 +69,6 @@ class Admin::CountriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def country_params
-      params[:country]
+      params[:country].permit(:name, :alpha_2, :alpha_3, :numeric)
     end
 end
