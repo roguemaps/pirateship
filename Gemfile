@@ -13,7 +13,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder', '~> 1.2'
 
 gem 'compass-rails', '2.0.alpha.0'
 gem 'zurb-foundation', '~> 4.0.0'
@@ -40,3 +39,5 @@ end
 
 # Use debugger
 gem 'debugger', group: [:development, :test]
+
+gem 'rails-admin-scaffold', group: :development
