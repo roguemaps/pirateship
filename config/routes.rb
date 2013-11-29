@@ -1,5 +1,9 @@
 Pirateship::Application.routes.draw do
   namespace :admin do
+    resources :states
+  end
+
+  namespace :admin do
     resources :countries
   end
 
