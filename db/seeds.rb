@@ -345,3 +345,5 @@ State.create( [{ :name => "Alabama", :abbr => "AL", :country_id => us.id },
                 { :name => "São Paulo", :abbr => "SP", :country_id => bra.id },
                 { :name => "Sergipe", :abbr => "SE", :country_id => bra.id },
                 { :name => "Tocantins", :abbr => "TO", :country_id => bra.id }])
+
+require File.expand_path('cities', File.dirname(__FILE__))
