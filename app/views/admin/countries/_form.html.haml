@@ -1,0 +1,23 @@
+= form_for([:admin, @country]) do |f|
+  - if @country.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@country.errors.count, "error")} prohibited this country from being saved:"
+      %ul
+        - @country.errors.full_messages.each do |msg|
+          %li= msg
+  .form-fields
+    .row
+      =f.label :name
+      =f.text_field :name
+    .row
+      =f.label :alpha_2
+      =f.text_field :alpha_2
+    .row
+      =f.label :alpha_3
+      =f.text_field :alpha_3
+    .row
+      =f.label :numeric
+      =f.text_field :numeric
+
+  .actions
+    = f.submit 'Save'

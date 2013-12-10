@@ -1,0 +1,21 @@
+%h1 Listing countries
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @countries.each do |country|
+    %tr
+      %td= country.id
+      %td= country.name
+      %td= country.alpha_2
+      %td= country.alpha_3
+      %td= country.numeric
+      %td= link_to 'Edit', edit_admin_country_path(country)
+      %td= link_to 'Destroy', [:admin, country], :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Country', new_admin_country_path

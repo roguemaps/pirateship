@@ -1,0 +1,23 @@
+%h1 Listing states
+
+%table
+  %tr
+    %th ID
+    %th Name
+    %th Abbr
+    %th Country
+    %th
+    %th
+
+  - @states.each do |state|
+    %tr
+      %td= state.id
+      %td= state.name
+      %td= state.abbr
+      %td= state.country.name
+      %td= link_to 'Edit', edit_admin_state_path(state)
+      %td= link_to 'Destroy', [:admin, state], :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New State', new_admin_state_path
