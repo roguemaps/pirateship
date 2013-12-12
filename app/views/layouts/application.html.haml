@@ -21,7 +21,7 @@
   = javascript_include_tag "vendor/custom.modernizr"
   = csrf_meta_tag
 
-%body
+%body{class: content_for?(:body_classes) ? yield(:body_classes) : body_classes, id: body_id }
 
   = yield
 
