@@ -22,7 +22,7 @@
   = csrf_meta_tag
 
 %body{class: content_for?(:body_classes) ? yield(:body_classes) : body_classes, id: body_id }
-
-  = yield
+  .main-container
+    = yield
 
   = javascript_include_tag "application", "data-turbolinks-track" => true
