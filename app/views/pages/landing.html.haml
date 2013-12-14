@@ -1,2 +1,25 @@
 - title 'Welcome'
-Welcome to RogueMaps
+
+.head
+
+  %nav.top-bar{data: {topbar: true} }
+    %ul.title-area
+      =link_to image_tag('logo.png'), class: 'logo'
+
+    %section.top-bar-section
+      %ul.right
+        %li
+          =link_to "Login", "#"
+        %li
+          =mail_to "Contact", "contact@roguemaps.com"
+
+.main.row
+  .large-8.small-centered.columns.row
+    =form_tag search_businesses_path do
+      .large-5.columns
+        =text_field_tag :location, nil, placeholder:'Where'
+      .large-5.columns
+        =text_field_tag :q, nil, placeholder:'What'
+      .large-2.columns
+        =submit_tag "S"
+    

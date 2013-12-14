@@ -13,6 +13,13 @@ Pirateship::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'pages#landing'
 
+  resources :businesses do
+    collection do
+      get :search
+    end
+  end
+
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
