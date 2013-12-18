@@ -1,0 +1,57 @@
+= form_for([:admin, @business]) do |f|
+  - if @business.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@business.errors.count, "error")} prohibited this business from being saved:"
+      %ul
+        - @business.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-fields
+    -if @state
+      .row
+        =f.label :city_id
+        =f.select :city_id, options_from_collection_for_select(@cities, :id, :city_display, @business.city ? @business.city.id : ''), include_blank: '- Select -'
+    -else
+      .row
+        =label_tag :state
+        =select_tag :state, options_from_collection_for_select(State.all, :id, :state_display), class: 'city_select_helper'
+    .row
+      =f.label :name
+      =f.text_field :name
+    .row
+      =f.label :category
+      =f.text_field :category
+    .row
+      =f.label :formatted_address
+      =f.text_field :formatted_address
+    .row
+      =f.label :phone
+      =f.text_field :phone
+    .row
+      =f.label :website
+      =f.text_field :website
+    .row
+      =f.label :facebook_page
+      =f.text_field :facebook_page
+    .row
+      =f.label :description
+      =f.text_area :description
+    .row
+      =f.label :details
+      =f.text_area :details
+    .row
+      =f.label :price_level
+      =f.select :price_level, options_for_select(1..4)
+    .row
+      =f.label :lat
+      =f.text_field :lat
+      =f.label :lng
+      =f.text_field :lng
+    .row
+      =f.label :active
+      =f.check_box :active
+    .row
+
+
+  .actions
+    = f.submit 'Save'
