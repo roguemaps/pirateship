@@ -7,6 +7,7 @@
     %th Category
     %th Address
     %th Phone
+    %th Active?
     %th
     %th
 
@@ -17,6 +18,7 @@
       %td= business.category
       %td= business.formatted_address
       %td= business.phone
+      %td= business.active? ? 'yes' : 'no'
       %td= link_to 'Show', business
       %td= link_to 'Destroy', [:admin, business], :method => :delete, :data => { :confirm => 'Are you sure?' }
 
