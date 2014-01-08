@@ -1,0 +1,8 @@
+-@businesses.each do |business|
+  .business
+
+    %h2 
+      =link_to business.name, business_path(business)
+    %span= business.category
+    %p= business.formatted_address
+    %p= business.phone
