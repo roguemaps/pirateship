@@ -8,6 +8,9 @@ class BusinessesController < ApplicationController
     @q = search_params[:q]
   end
 
+  def show
+    @business = Business.find(params[:id])
+  end
 
   private
 
