@@ -1,0 +1,12 @@
+.head
+
+  %nav.top-bar{data: {topbar: true} }
+    %ul.title-area
+      =link_to image_tag('logo.png'), class: 'logo'
+
+    %section.top-bar-section
+      %ul.right
+        %li
+          =link_to "Login", "#"
+        %li
+          =mail_to "contact@roguemaps.com", "Contact"
