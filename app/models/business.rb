@@ -19,4 +19,10 @@ class Business < ActiveRecord::Base
     where("name ILIKE :search", search: "%#{q}%")
   end
 
+  def thumbnail_url
+    #if there is a thumbnail return url
+    #else
+    nil
+  end
+
 end
