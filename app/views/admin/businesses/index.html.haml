@@ -1,0 +1,27 @@
+%h1 Listing businesses
+
+%table
+  %tr
+    %th City
+    %th Name
+    %th Category
+    %th Address
+    %th Phone
+    %th Active?
+    %th
+    %th
+
+  - @businesses.each do |business|
+    %tr
+      %td= business.city.city_display
+      %td= link_to business.name, edit_admin_business_path(business)
+      %td= business.category
+      %td= business.formatted_address
+      %td= business.phone
+      %td= business.active? ? 'yes' : 'no'
+      %td= link_to 'Show', business
+      %td= link_to 'Destroy', [:admin, business], :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Business', new_admin_business_path

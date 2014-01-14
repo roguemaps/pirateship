@@ -1,18 +1,5 @@
 - title 'Welcome'
-
-.head
-
-  %nav.top-bar{data: {topbar: true} }
-    %ul.title-area
-      =link_to image_tag('logo.png'), class: 'logo'
-
-    %section.top-bar-section
-      %ul.right
-        %li
-          =link_to "Login", "#"
-        %li
-          =mail_to "Contact", "contact@roguemaps.com"
-
+=render 'shared/head'
 .main.row
   .large-8.small-centered.columns.row
     =form_tag search_businesses_path do

@@ -1,0 +1,24 @@
+=render 'shared/head'
+
+.results.row
+  .map.large-4.columns
+    map goes here
+  .business.large-8.columns
+
+    .large-3.column
+      =image_tag (@business.thumbnail_url || 'business_thumb_placeholder.png')
+    .large-9.column
+
+      %h2= @business.name
+      %p= @business.category
+      %p= @business.price_level
+      %p= @business.formatted_address
+      %p= @business.phone
+      %p= @business.website
+      %p= @business.phone
+      %p= @business.facebook_page
+
+      .description
+        =@business.description
+      .details
+        =@business.details
