@@ -1,12 +1,13 @@
 - title 'Welcome'
 =render 'shared/head'
 .main.row
-  .large-8.small-centered.columns.row
-    =form_tag search_businesses_path do
-      .large-5.columns
-        =text_field_tag :location, nil, placeholder:'Where'
+  .large-10.small-centered.columns.row
+    =form_tag search_businesses_path, class: 'search' do
       .large-5.columns
         =text_field_tag :q, nil, placeholder:'What'
+      .large-5.columns
+        =text_field_tag :location, nil, placeholder:'Where'
+      
       .large-2.columns
-        =submit_tag "S"
+        =image_tag 'search_button.png', class: 'submit', onclick: '$(this).parents("form").submit()'
     

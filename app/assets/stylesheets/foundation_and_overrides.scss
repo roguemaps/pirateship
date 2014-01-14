@@ -15,7 +15,7 @@
 // $em-base: 16px;
 
 // We use these to control various global styles
-// $body-bg: #fff;
+$body-bg: #090909 image_url('map_bg.jpg') no-repeat top;
 // $body-font-color: #222;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
@@ -195,7 +195,7 @@
 // $label-bottom-margin: emCalc(3px);
 // $input-font-family: inherit;
 // $input-font-color: rgba(0,0,0,0.75);
-// $input-font-size: emCalc(14px);
+$input-font-size: emCalc(24px);
 // $input-bg-color: #fff;
 // $input-focus-bg-color: darken(#fff, 2%);
 // $input-border-color: darken(#fff, 20%);
@@ -968,11 +968,11 @@
 //
 
 // Background color for the top bar
-// $topbar-bg: #111;
+$topbar-bg: rgba(86, 119, 86, 0.35);
 
 // Height and margin
-// $topbar-height: 45px;
-// $topbar-margin-bottom: emCalc(30px);
+$topbar-height: 135px;
+$topbar-margin-bottom: emCalc(30px);
 
 // Control Input height for top bar
 // $topbar-input-height: 2.45em;
@@ -982,9 +982,9 @@
 // $topbar-title-font-size: emCalc(17px);
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: #fff;
+$topbar-link-color: black;
 // $topbar-link-weight: bold;
-// $topbar-link-font-size: emCalc(13px);
+$topbar-link-font-size: emCalc(24px);
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: #333;
