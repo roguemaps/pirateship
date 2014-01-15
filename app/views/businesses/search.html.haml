@@ -7,9 +7,9 @@
 
     -@businesses.each do |business|
       .business.row
-        .large-3.column
-          =image_tag (business.thumbnail_url || 'business_thumb_placeholder.png')
-        .large-9.column
+        .large-2.column
+          =image_tag (business.thumbnail_url || 'business_thumb_placeholder.png'), class: "thumb"
+        .large-10.column
 
           %h2 
             =link_to business.name, business_path(business)
