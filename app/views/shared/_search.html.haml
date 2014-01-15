@@ -1,0 +1,14 @@
+=form_tag search_businesses_path, class: 'search' do
+  %ul.right
+    %li
+      =label_tag :location, 'Displaying:', class: 'inline right'
+    %li
+      =text_field_tag :q, @q, placeholder:'What'
+    %li
+      =label_tag :location, 'in', class: 'inline right'
+    %li
+      =text_field_tag :location, @location, placeholder:'Where'
+    
+    %li
+      %label.inline
+        =image_tag 'search_button.png', class: 'submit', onclick: '$(this).parents("form").submit()'
