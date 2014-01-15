@@ -1,5 +1,6 @@
 class Admin::BusinessesController < ApplicationController
   before_action :set_business, only: [:show, :edit, :update, :destroy]
+  layout 'admin'
 
   # GET /admin/businesses
   def index
