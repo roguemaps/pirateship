@@ -15,7 +15,7 @@
 // $em-base: 16px;
 
 // We use these to control various global styles
-$body-bg: #d2cec1 image_url('map_bg.jpg') no-repeat top;
+$body-bg: #d2cec1 image_url('map_bg.jpg') no-repeat center;
 // $body-font-color: #222;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
@@ -65,7 +65,7 @@ $body-bg: #d2cec1 image_url('map_bg.jpg') no-repeat top;
 // Grid Variables
 //
 
- $row-width: 100%;
+$row-width: 100%;
 // $column-gutter: 1.875em;
 // $total-columns: 12;
 
@@ -968,11 +968,11 @@ $input-font-size: emCalc(24px);
 //
 
 // Background color for the top bar
-//rgba(86, 119, 86, 0.35)
-$topbar-bg: rgba(86, 119, 86, 0);
+// old topbar-bg color rgba(86, 119, 86, 0.35)
+$topbar-bg: rgba(255, 255, 255, 0.35);
 
-// Height and margin
-$topbar-height: 135px;
+// Height and margin 135px
+$topbar-height: 100px;
 $topbar-margin-bottom: emCalc(30px);
 
 // Control Input height for top bar
