@@ -26,5 +26,10 @@
     = yield
 
   = javascript_include_tag "application", "data-turbolinks-track" => true
+  
+  -if content_for?(:scripts)
+    :javascript
+      #{yield(:scripts)}
+      
 
 

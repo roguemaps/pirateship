@@ -1,8 +1,9 @@
+-content_for(:scripts){render '/layouts/gmap.js'}
 =render 'shared/head'
 
 .results.row
   .map.large-4.columns
-    map goes here
+    #map-canvas
   .businesses.large-8.columns
 
     -@businesses.each do |business|
