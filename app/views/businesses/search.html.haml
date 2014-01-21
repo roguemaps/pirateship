@@ -1,18 +1,19 @@
+-content_for(:scripts){render '/layouts/gmap.js'}
 =render 'shared/head'
 
 .results.row
   .map.large-4.columns
-    map goes here
+    #map-canvas
   .businesses.large-8.columns
 
     -@businesses.each do |business|
-      .business.row
+      .business.row{data: {lat: business.lat, lng: business.lng}}
         .large-2.column
           =image_tag (business.thumbnail_url || 'business_thumb_placeholder.png'), class: "thumb"
         .large-10.column
 
           %h2 
-            =link_to business.name, business_path(business)
+            =link_to business.name, business_path(business), class: 'business-name'
           .description= business.description
           %span= business.formatted_address
           %span= business.phone

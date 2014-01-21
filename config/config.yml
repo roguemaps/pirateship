@@ -1,0 +1,8 @@
+development:
+  google_api_key: AIzaSyDTP89RXX7RthVZRCu_VtE7TLtFtbpykKs
+
+test:
+  google_api_key: AIzaSyDTP89RXX7RthVZRCu_VtE7TLtFtbpykKs
+
+production:
+  google_api_key: AIzaSyCSxvOOoFciWoDm_N1n_m9LiRhPJ4rxLx0
