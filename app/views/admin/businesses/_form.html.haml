@@ -8,49 +8,52 @@
 
   .form-fields
     -if @state
-      .row
+      .row.large-10.large-centered.columns
         =f.label :city_id
         =f.select :city_id, options_from_collection_for_select(@cities, :id, :city_display, @business.city ? @business.city.id : ''), include_blank: '- Select -'
     -else
-      .row
+      .row.large-10.large-centered.columns
         =label_tag :state
         =select_tag :state, options_from_collection_for_select(State.all, :id, :state_display), class: 'city_select_helper'
-    .row
+    .row.large-10.large-centered.columns
       =f.label :name
       =f.text_field :name
-    .row
+    .row.large-10.large-centered.columns
       =f.label :category
       =f.text_field :category
-    .row
+    .row.large-10.large-centered.columns
       =f.label :formatted_address
       =f.text_field :formatted_address
-    .row
+      %a.button{href: '#', onclick: 'Admin.geocode_biz()'}
+        Geocode
+
+    .row.large-10.large-centered.columns
       =f.label :phone
       =f.text_field :phone
-    .row
+    .row.large-10.large-centered.columns
       =f.label :website
       =f.text_field :website
-    .row
+    .row.large-10.large-centered.columns
       =f.label :facebook_page
       =f.text_field :facebook_page
-    .row
+    .row.large-10.large-centered.columns
       =f.label :description
       =f.text_area :description
-    .row
+    .row.large-10.large-centered.columns
       =f.label :details
       =f.text_area :details
-    .row
+    .row.large-10.large-centered.columns
       =f.label :price_level
       =f.select :price_level, options_for_select(1..4)
-    .row
+    .row.large-10.large-centered.columns
       =f.label :lat
       =f.text_field :lat
       =f.label :lng
       =f.text_field :lng
-    .row
+    .row.large-10.large-centered.columns
       =f.label :active
       =f.check_box :active
-    .row
+    .row.large-10.large-centered.columns
 
 
   .actions
