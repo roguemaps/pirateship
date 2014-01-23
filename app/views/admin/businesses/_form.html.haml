@@ -22,6 +22,16 @@
       =f.label :category
       =f.text_field :category
     .row.large-10.large-centered.columns
+      .large-4.columns
+        =label_tag 'Filterable Tags'
+        =select_tag 'business[tag_ids][]', options_from_collection_for_select(Tag.filterable, :id, :name, selected: @business.tags.collect(&:id)), multiple: true
+      .large-4.columns
+        =label_tag 'Other Tags'
+        =select_tag 'business[tag_ids][]', options_from_collection_for_select(Tag.not_filterable, :id, :name, selected: @business.tags.collect(&:id)), multiple: true
+      .large-4.columns
+        =label_tag 'New Tags (Comma Separated)'
+        =text_field_tag 'business[new_tags]'
+    .row.large-10.large-centered.columns
       =f.label :formatted_address
       =f.text_field :formatted_address
       %a.button{href: '#', onclick: 'Admin.geocode_biz()'}

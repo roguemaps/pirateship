@@ -1,5 +1,6 @@
 class Business < ActiveRecord::Base
   belongs_to :city
+  has_and_belongs_to_many :tags
 
   validates_presence_of :name
   validates_presence_of :city_id
@@ -23,6 +24,13 @@ class Business < ActiveRecord::Base
     #if there is a thumbnail return url
     #else
     nil
+  end
+
+  def new_tags=(list)
+    tag_list = list.split(',').map do |tag_name|
+      Tag.find_or_create_by_name tag_name
+    end
+    self.tags << tag_list
   end
 
 end
