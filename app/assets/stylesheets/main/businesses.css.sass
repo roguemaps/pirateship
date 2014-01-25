@@ -2,10 +2,32 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body.businesses
-  margin-top: 3em
-
-.head
-  background: #d2cec1 image_url('map_bg.jpg') no-repeat center left fixed
+  margin-top: 2em
+  
+  .main-container
+    position: absolute
+    top: 0px
+    bottom: 0px
+    left: 0px
+    right: 0px
+    
+  .businesses
+    position: fixed
+    top: 100px
+    bottom: 0px
+    right: 0px
+    overflow-y: scroll
+    
+  .map
+    position: fixed
+    top: 100px
+    bottom: 0px
+    left: 0px
+    +border-radius(5px)
+    padding: inherit
+    height: 100%
+    overflow: hidden
+  
     
   .business
     background: rgba(243, 248, 252, 1)
@@ -20,6 +42,8 @@ body.businesses
   .thumb
     width: 100%
     vertical-align: bottom
+    
+
     
   
 
