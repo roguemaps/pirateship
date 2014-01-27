@@ -16,8 +16,25 @@ class Business < ActiveRecord::Base
   end
 
   def self.search(q)
-    #NOTE: ILIKE -> postgresql only!!!
-    where("name ILIKE :search", search: "%#{q}%")
+    unless q.empty?
+      #NOTE: ILIKE -> postgresql only!!!
+      where("businesses.name ILIKE :search", search: "%#{q}%")
+    else
+      all
+    end
+  end
+
+  def self.tagged(tag_list)
+    unless tag_list.empty?
+      joins(:tags).where('businesses_tags.tag_id IN (?)', tag_list).uniq
+    else
+      all
+    end
+  end
+
+  def tagged?(tag_list)
+    return true if tag_list.empty?
+    tags & tag_list == tag_list
   end
 
   def thumbnail_url
@@ -28,7 +45,7 @@ class Business < ActiveRecord::Base
 
   def new_tags=(list)
     tag_list = list.split(',').map do |tag_name|
-      Tag.find_or_create_by_name tag_name
+      Tag.find_or_create_by_name tag_name.strip
     end
     self.tags << tag_list
   end

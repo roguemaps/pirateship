@@ -1,0 +1,9 @@
+.tag-filter
+  %form#tag-filter.custom
+    %ul.large-block-grid-5
+      -Tag.filterable.each do |tag|
+        %li
+          =label_tag tag.name do
+            =check_box_tag tag.name, tag.name, @filter_tags.include?(tag)
+            %span.custom.checkbox
+            =tag.name

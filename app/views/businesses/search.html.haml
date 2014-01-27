@@ -5,6 +5,7 @@
   .map.large-4.columns
     #map-canvas
   .businesses.large-8.columns
+    =render 'tag_filter'
 
     -@businesses.each do |business|
       .business.row{data: {lat: business.lat, lng: business.lng}}

@@ -43,3 +43,4 @@ end
 gem 'debugger', group: [:development, :test]
 
 gem 'rails-admin-scaffold', group: :development
+gem 'quiet_assets', group: :development
