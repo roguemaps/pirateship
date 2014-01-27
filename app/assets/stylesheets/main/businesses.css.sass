@@ -2,11 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body.businesses
-  margin-top: 1.5em
-
+  margin-top: 2em
+  
+  .main-container
+    position: absolute
+    top: 0px
+    bottom: 0px
+    left: 0px
+    right: 0px
+    
+  .businesses
+    position: fixed
+    top: 55px
+    bottom: 0px
+    right: 0px
+    overflow-y: scroll
+    background: rgba(243, 248, 252, .85)
+    
+  .map
+    position: fixed
+    top: 55px
+    bottom: 0px
+    left: 0px
+    +border-radius(5px)
+    padding: inherit
+    height: 100%
+    overflow: hidden
+  
     
   .business
-    background: rgba(255, 255, 255, 0.95)
+    background: rgba(243, 248, 252, 1)
     padding: 5px 0 5px 0
     margin-bottom: 5px
     +border-radius(5px)
@@ -17,8 +42,9 @@ body.businesses
       
   .thumb
     width: 100%
-    display: inline-block
-    vertical-align: middle
+    vertical-align: bottom
+    
+
     
   
 
