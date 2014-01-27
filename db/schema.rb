@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131216213117) do
+ActiveRecord::Schema.define(version: 20140122002607) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,11 +34,20 @@ ActiveRecord::Schema.define(version: 20131216213117) do
     t.integer  "updated_by",                                 default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "zipcode"
   end
 
   add_index "businesses", ["category"], name: "index_businesses_on_category", using: :btree
   add_index "businesses", ["city_id"], name: "index_businesses_on_city_id", using: :btree
   add_index "businesses", ["name"], name: "index_businesses_on_name", using: :btree
+
+  create_table "businesses_tags", id: false, force: true do |t|
+    t.integer "business_id", null: false
+    t.integer "tag_id",      null: false
+  end
+
+  add_index "businesses_tags", ["business_id", "tag_id"], name: "index_businesses_tags_on_business_id_and_tag_id", using: :btree
+  add_index "businesses_tags", ["tag_id", "business_id"], name: "index_businesses_tags_on_tag_id_and_business_id", using: :btree
 
   create_table "cities", force: true do |t|
     t.string   "name"
@@ -73,5 +82,12 @@ ActiveRecord::Schema.define(version: 20131216213117) do
 
   add_index "states", ["country_id"], name: "index_states_on_country_id", using: :btree
   add_index "states", ["name"], name: "index_states_on_name", using: :btree
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
+    t.boolean  "filterable", default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

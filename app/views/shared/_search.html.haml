@@ -1,4 +1,6 @@
 =form_tag search_businesses_path, class: 'search' do
+  =hidden_field_tag :filter_tags
+
   %ul.middle
     %li
       =label_tag :location, 'Displaying:', class: 'inline right'
