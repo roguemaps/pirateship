@@ -2,9 +2,9 @@
 =render 'shared/head'
 
 .results.row
-  .map.large-4.columns
+  .map.large-5.columns.show-for-medium-up
     #map-canvas
-  .businesses.large-8.columns
+  .businesses.large-7.columns
     =render 'tag_filter'
 
     -@businesses.each do |business|
