@@ -2,8 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body.businesses
-
-  margin-top: 2em
   
   .main-container
     position: absolute
@@ -12,9 +10,16 @@ body.businesses
     left: 0px
     right: 0px
     
+  .results
+    position: absolute
+    top: 55px
+    bottom: 0px
+    right: 0px
+    left: 0px
+    
   .businesses
     position: fixed
-    top: 55px
+    top: 0px
     bottom: 0px
     right: 0px
     overflow-y: scroll
@@ -22,11 +27,9 @@ body.businesses
     
   .map
     position: fixed
-    top: 55px
+    top: 0px
     bottom: 0px
     left: 0px
-    +border-radius(5px)
-    padding: inherit
     height: 100%
     overflow: hidden
 
