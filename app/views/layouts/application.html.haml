@@ -21,6 +21,8 @@
   = javascript_include_tag "vendor/custom.modernizr"
   = csrf_meta_tag
 
+  %link{href: 'http://fonts.googleapis.com/css?family=Jim+Nightshade', rel: 'stylesheet', type: 'text/css'}
+
 %body{class: content_for?(:body_classes) ? yield(:body_classes) : body_classes, id: body_id }
   .main-container
     = yield
