@@ -12,5 +12,4 @@
       =text_field_tag :location, @location, placeholder:'Where'
     
     %li
-      %label.inline
-        =image_tag 'search_button.png', class: 'submit', onclick: '$(this).parents("form").submit()'
+      =image_submit_tag 'search_button.png', class: 'submit'
