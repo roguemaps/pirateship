@@ -5,6 +5,8 @@ class Business < ActiveRecord::Base
   validates_presence_of :name
   validates_presence_of :city_id
 
+  has_attached_file :profile_pic, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/business_thumb_placeholder.png"
+
   scope :active, -> {where active: true}
 
   def self.by_city(city=nil)
@@ -35,12 +37,6 @@ class Business < ActiveRecord::Base
   def tagged?(tag_list)
     return true if tag_list.empty?
     tags & tag_list == tag_list
-  end
-
-  def thumbnail_url
-    #if there is a thumbnail return url
-    #else
-    nil
   end
 
   def new_tags=(list)

@@ -16,3 +16,7 @@
 /tmp
 
 .DS_Store
+
+# Ignore file uploaded with paperclip
+/public/system/*
+

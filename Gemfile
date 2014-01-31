@@ -19,6 +19,9 @@ gem 'zurb-foundation', '~> 4.0.0'
 
 gem "seedbank"
 
+gem "paperclip", "~> 3.5.1"
+gem 'aws-sdk', group: :production
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
