@@ -39,12 +39,6 @@ class Business < ActiveRecord::Base
     tags & tag_list == tag_list
   end
 
-  def thumbnail_url
-    #if there is a thumbnail return url
-    #else
-    nil
-  end
-
   def new_tags=(list)
     tag_list = list.split(',').map do |tag_name|
       Tag.find_or_create_by_name tag_name.strip
