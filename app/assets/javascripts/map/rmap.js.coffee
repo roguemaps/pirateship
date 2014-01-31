@@ -25,6 +25,11 @@ Rmap =
           position: latlng
           map: Rmap.map
           title: $(this).find('.business-name').text()
+          icon: 
+            url: image_path('map_marker.png')
+            scaledSize: new google.maps.Size(25, 25)
+            
+
         Rmap.bounds.extend latlng
 
       unless Rmap.bounds.isEmpty()

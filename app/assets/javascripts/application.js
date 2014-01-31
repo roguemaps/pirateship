@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require_tree ./lib
 //= require_tree ./map
 //= require_tree ./main
 
