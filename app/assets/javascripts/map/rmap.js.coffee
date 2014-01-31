@@ -5,6 +5,14 @@ Rmap =
       center: new google.maps.LatLng(41.850033, -87.6500523),
       zoom: 3
       maxZoom: 18
+      zoomControlOptions:
+        # style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR
+        position: google.maps.ControlPosition.LEFT_BOTTOM
+      panControlOptions:
+        position: google.maps.ControlPosition.LEFT_BOTTOM
+    
+    
+
 
     @bounds = new google.maps.LatLngBounds()
 
