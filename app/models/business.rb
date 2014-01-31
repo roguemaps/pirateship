@@ -5,6 +5,8 @@ class Business < ActiveRecord::Base
   validates_presence_of :name
   validates_presence_of :city_id
 
+  has_attached_file :profile_pic, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/business_thumb_placeholder.png"
+
   scope :active, -> {where active: true}
 
   def self.by_city(city=nil)

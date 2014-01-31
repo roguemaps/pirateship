@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140122002607) do
+ActiveRecord::Schema.define(version: 20140130224157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,14 +27,18 @@ ActiveRecord::Schema.define(version: 20140122002607) do
     t.integer  "price_level"
     t.string   "facebook_page"
     t.integer  "city_id"
-    t.decimal  "lat",               precision: 10, scale: 6
-    t.decimal  "lng",               precision: 10, scale: 6
-    t.boolean  "active",                                     default: false
-    t.integer  "created_by",                                 default: 1
-    t.integer  "updated_by",                                 default: 1
+    t.decimal  "lat",                      precision: 10, scale: 6
+    t.decimal  "lng",                      precision: 10, scale: 6
+    t.boolean  "active",                                            default: false
+    t.integer  "created_by",                                        default: 1
+    t.integer  "updated_by",                                        default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "zipcode"
+    t.string   "profile_pic_file_name"
+    t.string   "profile_pic_content_type"
+    t.integer  "profile_pic_file_size"
+    t.datetime "profile_pic_updated_at"
   end
 
   add_index "businesses", ["category"], name: "index_businesses_on_category", using: :btree
