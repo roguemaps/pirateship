@@ -15,7 +15,7 @@
 // $em-base: 16px;
 
 // We use these to control various global styles
-$body-bg: #d2cec1 image_url('map_bg.jpg') no-repeat center center fixed;
+$body-bg: #d2cec1 image_url('map.png') no-repeat center center;
 // $body-font-color: #222;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
@@ -969,10 +969,10 @@ $input-font-size: emCalc(24px);
 
 // Background color for the top bar
 // old topbar-bg color rgba(86, 119, 86, 0.35)
-$topbar-bg: rgba(243, 248, 252, .35);
+$topbar-bg: rgba(243, 248, 252, .85);
 
 // Height and margin 135px
-$topbar-height: 50px;
+$topbar-height: 55px;
 $topbar-margin-bottom: emCalc(30px);
 
 // Control Input height for top bar
@@ -985,7 +985,7 @@ $topbar-margin-bottom: emCalc(30px);
 // Set the link colors and styles for top-level nav
 $topbar-link-color: black;
 // $topbar-link-weight: bold;
-$topbar-link-font-size: emCalc(24px);
+$topbar-link-font-size: emCalc(30px);
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: #333;
