@@ -1,16 +1,17 @@
 .head.fixed
 
   %nav.top-bar{data: {topbar: true} }
-    %ul.title-area.right
-      =link_to image_tag('logo.png'), root_path, class: 'logo'
+    %ul.title-area
+      %li
+        =link_to image_tag('logo.png'), root_path, class: 'logo'
+        Your Guide to Sustainable Treasures
 
     %section.top-bar-section
-      %ul.left
+      %ul.right
         %li
           =link_to "Login", "#"
         %li
           =mail_to "contact@roguemaps.com", "Contact"
-
-
-    %section.top-bar-section.search
-      =render 'shared/search'
+          
+-#    %section.top-bar-section.search
+-#      =render 'shared/search'
