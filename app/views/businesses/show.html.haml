@@ -7,7 +7,7 @@
   .business.large-8.columns{data: {lat: @business.lat, lng: @business.lng}}
 
     .large-3.column
-      =image_tag (@business.thumbnail_url || 'business_thumb_placeholder.png')
+      =image_tag (@business.profile_pic.url(:medium))
     .large-9.column
 
       %h2= @business.name

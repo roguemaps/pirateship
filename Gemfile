@@ -22,6 +22,8 @@ gem "seedbank"
 gem "paperclip", "~> 3.5.1"
 gem 'aws-sdk', group: :production
 
+gem 'pg_search'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

@@ -8,19 +8,33 @@ class Business < ActiveRecord::Base
   has_attached_file :profile_pic, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/assets/business_thumb_placeholder.png"
 
   scope :active, -> {where active: true}
+  scope :in_cities, lambda { |cities| joins(:city).where('cities.id IN (?)', cities) }
+
+  include PgSearch
+  pg_search_scope :search_text, 
+    :against => {
+      :name => 'A',
+      :category => 'B',
+      :description => 'C'
+    },
+    :using => {
+      :tsearch => {
+        :dictionary => "english",
+        :any_word => true
+      }
+    }
 
   def self.by_city(city=nil)
-    if city
-      where(city_id: city)
-    else
+    unless city.blank?
+      in_cities(city)
+    else  
       all
     end
   end
 
   def self.search(q)
     unless q.empty?
-      #NOTE: ILIKE -> postgresql only!!!
-      where("businesses.name ILIKE :search", search: "%#{q}%")
+      search_text(q)
     else
       all
     end
@@ -29,6 +43,13 @@ class Business < ActiveRecord::Base
   def self.tagged(tag_list)
     unless tag_list.empty?
       joins(:tags).where('businesses_tags.tag_id IN (?)', tag_list).uniq
+    else
+      all
+    end
+  end
+  def self.tagged_with_all(tag_list)
+    unless tag_list.empty?
+      joins(:tags).where(tags: {id: tag_list }).group("businesses.id").having("count(*) = #{tag_list.size}")
     else
       all
     end
