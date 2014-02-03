@@ -1,11 +1,11 @@
 -content_for(:scripts){render '/layouts/gmap.js'}
 =render 'shared/head'
+=render 'tag_filter'
 
 .results.row
   .map.large-5.columns.show-for-medium-up
     #map-canvas
   .businesses.large-7.columns
-    =render 'tag_filter'
 
     -@businesses.each do |business|
       .business.row{data: {lat: business.lat, lng: business.lng}}
