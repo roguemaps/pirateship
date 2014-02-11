@@ -2,7 +2,9 @@
 
   %nav.top-bar{data: {topbar: true} }
     %ul.title-area
-      =link_to image_tag('logo.png'), root_path, class: 'logo'
+      %li
+        =link_to image_tag('logo.png'), root_path, class: 'logo'
+        Your Guide to Sustainable Treasures
 
     %section.top-bar-section
       %ul.right
@@ -10,7 +12,6 @@
           =link_to "Login", "#"
         %li
           =mail_to "contact@roguemaps.com", "Contact"
-
-
+          
     %section.top-bar-section.search
-      =render 'shared/search'
+      =render 'shared/search'         

@@ -4,12 +4,13 @@ Rmap =
     @options =
       center: new google.maps.LatLng(41.850033, -87.6500523),
       zoom: 3
-      maxZoom: 18
+      maxZoom: 20
+      panControl: false
       zoomControlOptions:
         # style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR
-        position: google.maps.ControlPosition.LEFT_BOTTOM
-      panControlOptions:
-        position: google.maps.ControlPosition.LEFT_BOTTOM
+        position: google.maps.ControlPosition.LEFT_TOP
+      #panControlOptions:
+      #  position: google.maps.ControlPosition.LEFT_TOP
     
     
 

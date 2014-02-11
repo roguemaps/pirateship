@@ -1,9 +1,16 @@
 // Place all the styles related to the businesses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$business_bg_color: rgba(243, 248, 252, .85)
+
 body.businesses
     
-
+  .showbg
+    background: $business_bg_color image_url('businesses_bg.gif') no-repeat
+    background-size: 100%
+    width: 100%
+    height: 100%
     
   .businesses
     position: absolute
@@ -11,26 +18,44 @@ body.businesses
     bottom: 0px
     right: 0px
     overflow-y: scroll
-    background: rgba(243, 248, 252, .85)
+    background: $business_bg_color 
 
   .tag-filter
-    background: rgba(255, 255, 255, 0.50)
+    position: absolute
+    z-index: 1000
+    top: 70px
+    left: 160px
+    bottom: 0px
+    right: 0px
+    width: 88%
+    height: 2em
+  
+  .tag-filter-bg
+    background: rgba(0, 0, 0, .45)
+    height: 35px
+    width: 100%
+    margin-top: -35px
 
   .business
-    background: rgba(243, 248, 252, 1)
+    background: rgba(243, 248, 252, .35)
     padding: 5px 0 5px 0
     margin-bottom: 5px
-    +border-radius(5px)
     min-height: 150px
     h2
-      line-height: 1
+      line-height: 1.2
       margin: 0
       font-family: $heading-font
-      
+      padding-top: 3px
+    
   .thumb
     width: 100%
-    vertical-align: bottom
+    margin-top: 30%
     
+  .webface, .details
+    margin-top: 25px
+    
+  .import_info
+    margin-top: 15px
 
     
   
