@@ -2,25 +2,32 @@ class City < ActiveRecord::Base
   belongs_to :country
   belongs_to :state
 
+  scope :by_state, lambda { |states| joins(:state).where('states.id IN (?)', states) }
+
+  # #why so slow?
+  # include PgSearch
+  # pg_search_scope :search_by_name,
+  #                 :against => [:name],
+  #                 :using => [:trigram],
+  #                 :ranked_by => ":trigram"
+
+
   def self.search(q=nil)
-    search_terms = q.split
-    results = []
-    states = State.by_name(search_terms)
+
+    states = State.by_name(q)
     unless states.empty?
-      states.each do |state|
-        return state.cities.by_name(search_terms).first
-      end
+      by_state(states).by_name(q)
     else
-      return self.by_name(search_terms).first
+      return self.by_name(q)
     end
 
   end
 
   def self.by_name(name=nil)
-    if name
-      where("name ILIKE any(array[:search])", search: name)
+    unless name.blank?
+      where("cities.name % ?", name).order("similarity(cities.name, '#{name}') DESC")
     else
-      all
+      []
     end
   end
 

@@ -9,13 +9,11 @@
   .showbg
     .business.large-8.columns{data: {lat: @business.lat, lng: @business.lng}}
 
-      .large-3.column
-        =image_tag (@business.profile_pic.url(:medium) || 'business_thumb_placeholder.png'), class: "thumb"
-        %p= @business.phone
-        %p= @business.formatted_address
-      
-      .large-9.column
-
+    .large-3.column
+      =image_tag (@business.profile_pic.url(:medium))
+      %p= @business.formatted_address
+    
+    .large-9.column
         %h2= @business.name
         %span= @business.category
         %span= @business.price_level

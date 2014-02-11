@@ -4,7 +4,7 @@ class BusinessesController < ApplicationController
     set_search_params
 
     # @businesses = Business.active.by_city(City.search('ashland oregon')).search('food')
-    @businesses = Business.active.by_city(City.search(@location)).tagged(@filter_tags).search(@q).delete_if{|b| !b.tagged?(@filter_tags)}
+    @businesses = Business.active.by_city(City.search(@location)).tagged_with_all(@filter_tags).search(@q)
   
   end
 

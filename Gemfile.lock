@@ -93,6 +93,10 @@ GEM
       cocaine (~> 0.5.3)
       mime-types
     pg (0.17.0)
+    pg_search (0.7.3)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
+      arel
     polyglot (0.3.3)
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
@@ -164,6 +168,7 @@ DEPENDENCIES
   jquery-rails
   paperclip (~> 3.5.1)
   pg
+  pg_search
   quiet_assets
   rails (= 4.0.0)
   rails-admin-scaffold
