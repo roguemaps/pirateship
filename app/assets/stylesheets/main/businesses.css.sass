@@ -18,7 +18,7 @@ body.businesses
     bottom: 0px
     right: 0px
     overflow-y: scroll
-    background: $business_bg_color
+    background: $business_bg_color 
 
   .tag-filter
     position: absolute
@@ -27,11 +27,17 @@ body.businesses
     left: 160px
     bottom: 0px
     right: 0px
-    width: 85%
+    width: 88%
     height: 2em
+  
+  .tag-filter-bg
+    background: rgba(0, 0, 0, .45)
+    height: 35px
+    width: 100%
+    margin-top: -35px
 
   .business
-    background: rgba(243, 248, 252, 1)
+    background: rgba(243, 248, 252, .35)
     padding: 5px 0 5px 0
     margin-bottom: 5px
     min-height: 150px
@@ -39,12 +45,17 @@ body.businesses
       line-height: 1.2
       margin: 0
       font-family: $heading-font
-      
+      padding-top: 3px
+    
   .thumb
     width: 100%
+    margin-top: 30%
     
-  .webface, .description, .details
+  .webface, .details
     margin-top: 25px
+    
+  .import_info
+    margin-top: 15px
 
     
   
