@@ -1,25 +1,20 @@
 -content_for(:scripts){render '/layouts/gmap.js'}
 =render 'shared/head'
 
-
 .results.row
   .map.large-4.columns.show-for-medium-up
     #map-canvas
-    
   .showbg
     .business.large-8.columns{data: {lat: @business.lat, lng: @business.lng}}
-
-    .large-3.column
-      =image_tag (@business.profile_pic.url(:medium))
-      %p= @business.formatted_address
+      .large-3.column
+        =image_tag (@business.profile_pic.url(:medium))
+        %p= @business.formatted_address
     
-    .large-9.column
+      .large-9.column
         %h2= @business.name
         %span= @business.category
         %span= @business.price_level
         %p= @business.tags.collect(&:name).join(', ')
-      
-      
 
         .description
           =@business.description
@@ -29,3 +24,4 @@
         .webface
           %span= link_to @business.website, @business.website
           %span= link_to @business.facebook_page, @business.facebook_page
+
