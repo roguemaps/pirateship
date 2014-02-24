@@ -15,7 +15,7 @@
 // $em-base: 16px;
 
 // We use these to control various global styles
-$body-bg: #d2cec1 image_url('map.png') no-repeat top center;
+$body-bg: #d2cec1 image_url('map.png') no-repeat top center fixed;
 // $body-font-color: #222;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: normal;
@@ -973,7 +973,7 @@ $topbar-bg: rgba(243, 248, 252, .85);
 
 // Height and margin 135px
 $topbar-height: 100px;
-$topbar-margin-bottom: emCalc(30px);
+$topbar-margin-bottom: emCalc(100px);
 
 // Control Input height for top bar
 //$topbar-input-height: 2.45em;
