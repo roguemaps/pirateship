@@ -22,6 +22,7 @@ Tag.create_or_update_by_name!([{ :name => "Gluten Free", :filterable => true },
   { :name => "Kid Friendly", :filterable => true },
   { :name => "Eco Friendly", :filterable => true },
   { :name => "Farm to Table", :filterable => true },
-  { :name => "Biodynamic", :filterable => true }])
+  { :name => "Biodynamic", :filterable => true },
+  { :name => "Vegan", :filterable => true }])
 
 Tag.where('updated_at < ?', start_time).delete_all
