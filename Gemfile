@@ -47,5 +47,12 @@ end
 # Use debugger
 gem 'debugger', group: [:development, :test]
 
-gem 'rails-admin-scaffold', group: :development
-gem 'quiet_assets', group: :development
+group :development do
+  gem 'rails-admin-scaffold'
+  gem 'quiet_assets'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-livereload'
+  gem 'rb-fsevent'
+  gem 'rack-livereload'
+end
