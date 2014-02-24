@@ -6,7 +6,7 @@
 .results.row
   .map.large-5.columns.show-for-medium-up
     #map-canvas
-  .businesses.large-7.columns
+  .businesses.large-7.column
 
     -@businesses.each do |business|
       .business.row{data: {lat: business.lat, lng: business.lng}}
@@ -14,8 +14,12 @@
           =image_tag (business.profile_pic.url(:medium)), class: "thumb"
         .large-10.column
 
-          %h2 
-            =link_to business.name, business_path(business), class: 'business-name'
+          %hgroup.row
+            .small-9.column
+              %h2
+                =link_to business.name, business_path(business), class: 'business-name'
+            .small-3.column
+              %h3= business.category
           .description= business.description
           .import_info
             %span= business.formatted_address
