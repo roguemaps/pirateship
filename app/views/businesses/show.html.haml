@@ -8,7 +8,11 @@
     .business.large-8.columns{data: {lat: @business.lat, lng: @business.lng}}
       .large-3.column
         =image_tag (@business.profile_pic.url(:medium))
-        %p= @business.formatted_address
+        .adr
+          .street-address= @business.formatted_address
+          .city-state
+            %span.locality= @business.city.name + ","
+            %span.region= @business.city.state.name
     
       .large-9.column
         %h2= @business.name
