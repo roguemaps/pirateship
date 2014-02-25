@@ -17,7 +17,9 @@ class Admin::BusinessesController < ApplicationController
       @state = State.find(params[:state])
       @cities = @state.cities.order(:name)
     end
-    @business = Business.new
+
+    @business ||= Business.new
+
   end
 
   # GET /admin/businesses/1/edit
@@ -29,6 +31,12 @@ class Admin::BusinessesController < ApplicationController
   # POST /admin/businesses
   def create
     @business = Business.new(business_params)
+
+    if request.xhr?
+      @state = @business.city.state
+      @cities = @state.cities.order(:name)
+      return render :new 
+    end
 
     if @business.save
       redirect_to admin_businesses_path(), notice: 'Business was successfully created.'
@@ -66,6 +74,10 @@ class Admin::BusinessesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def business_params
+      if params[:city_name] && city = City.search(params[:city_name]).first
+        logger.info city.inspect
+        params[:business][:city_id] ||= city.id
+      end
       params[:business].permit(:city_id, :name, :category, {:tag_ids => []}, :new_tags, :profile_pic, :formatted_address, :zipcode, :phone, :website, :description, :details, :price_level, :facebook_page, :active, :lat, :lng)
     end
 end

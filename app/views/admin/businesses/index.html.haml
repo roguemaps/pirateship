@@ -24,4 +24,41 @@
 
 %br
 
-= link_to 'New Business', new_admin_business_path
+=link_to 'New Business', new_admin_business_path
+
+.search-google
+  %fieldset
+    %legend Google Search
+    .row.collapse
+      .large-8.column
+        =text_field_tag "query"
+      .large-2.column
+        %button.postfix{onclick: "Admin.searchGoogle(this)"} Search
+      .column
+
+  .new-business-form
+    = form_for([:admin, Business.new], remote: true) do |f|
+      =f.hidden_field :lat
+      =f.hidden_field :lng
+      .row
+        .large-1.column
+          =f.submit "Create", class: 'button'
+        .large-7.column
+          =f.label :name
+          =f.text_field :name
+        .column
+      .row
+        .large-3.large-offset-1.column
+          =f.label :formatted_address
+          =f.text_field :formatted_address
+        .large-4.column
+          =label_tag :city_name
+          =text_field_tag :city_name
+
+        .column
+  .search-results
+
+    
+
+
+#map-canvas

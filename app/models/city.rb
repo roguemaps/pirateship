@@ -15,6 +15,7 @@ class City < ActiveRecord::Base
   def self.search(q=nil)
 
     states = State.by_name(q)
+    logger.info states.collect(&:name)
     unless states.empty?
       by_state(states).by_name(q)
     else
