@@ -1,4 +1,5 @@
 class Admin::BusinessesController < ApplicationController
+  before_filter :authenticate
   before_action :set_business, only: [:show, :edit, :update, :destroy]
   layout 'admin'
 
