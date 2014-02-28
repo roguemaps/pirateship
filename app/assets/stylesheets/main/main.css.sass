@@ -90,7 +90,8 @@ html, body
   right: 0px
   left: 0px
   background: rgba(243, 248, 252, .85)
-  overflow: scroll
+  overflow-y: scroll
+  overflow-x: hidden
   
   
 .about_content
@@ -111,5 +112,31 @@ html, body
   p
     text-align: left
     text-indent: 50px
+  
+  .about-logo
+    border: black solid 2px
+    
+  .grid
+    height: 80%
+    width: 100%
+    background: image_url('about_logo.png')
+    background-position: center center
+    border: red solid 2px
+    .sword:hover ~ .ctent
+      background: green
+      display: block
+    .ctent
+      height: 100%
+      width: 100%
+      background: red
+      display: none
+
+    .inner
+      border: green solid 2px
+      height: 33.33%
+      .sword_content, .bg_content
+        display: none
+
+
 
 
