@@ -20,21 +20,21 @@ body.businesses
     overflow-y: scroll
     background: $business_bg_color 
 
-  .tag-filter
-    position: absolute
-    z-index: 1000
-    top: 70px
-    left: 160px
-    bottom: 0px
-    right: 0px
-    width: 87%
-    height: 2em
-  
   .tag-filter-bg
     background: rgba(0, 0, 0, .45)
     height: 35px
     width: 100%
     margin-top: -35px
+    overflow: hidden
+  
+  .tag-filter
+    position: relative
+    left: 12%
+    z-index: 10000
+    width: 87%
+    height: 100px
+    li
+      padding: 0
 
   .business
     background: rgba(243, 248, 252, .65)
