@@ -3,12 +3,13 @@
 =render 'shared/head'
 
 .results.row
-  .large-8.small-centered.columns.row
-    .wrapper
-      .about_content
+  .row.wrapper
+    .about_content
+      .large-8.columns
+        //hold logo and constructs for logo here
         %h1 About Logo
         %p Our logo is very special. As such we would like you to understand how we arrived at each element in out logo and the deeper meaning behind each selection. Mouseover any part of the image below to see a description of the targeted element in our logo. Yarr!
-
+        
         .row.grid
           .small-4.columns.inner.sword
           .small-4.columns.inner.bg
@@ -20,24 +21,24 @@
           .small-4.columns.inner.bg
           .small-4.columns.inner.sword
           .small-4-centered.columns.inner
-            .content
-              .sword_content 
-                %h1 Swords Cut It
-                %p The swords are to cut though the crap and get to the true source of knowledge. Plato believed that there is one true source for each thing existing in the physical world. Along those same lines roguemaps.com will help cut through the mountains of fake food and products to get to the true source. 
-              .bg_content 
-                %h1 Sail on the Highways
-                %p The background and main shape and colors are borrowed directly from the U.S. freeway signs. To be honest America is a driving culture. The freeway system is what connects us physically to one another and helps us to get our jobs done and live our lives with the most ease possible in a car based society.
-              .unicorns_content
-                %h1 Unicorns!
-                %p We had to include unicorns because life is very magical.We chose to have two unicorns to express the duality of life and the human condition. The yin and yang of life. True in magic as in all layers of life.
-              .x_content
-                %h1 X Marks The Spot
-                %p X marks the spot on any treasure map. We at Rogue Maps believe the sustainability and health are the greatest of all treasures.  Ultimately Rogue Maps is a treasure map leading you to the treasures of a healthy and sustainable lifestyle.
-          
-        %h1 Our Company
-        %p Rogue Maps is resource guide to connect consumers to sustainable products and businesses to sustainable raw materials. For example, consumers are able to locate restaurants with organic and non-gmo items on their menus by using roguemaps.com. Rogue Maps is also a resource for Restaurants and consumers to source ingredients from local and/or organic farms. 
-        %p By listing suppliers and available ingredients of sustainable raw materials Rogue Maps encourages transparency as well as creates, accessibility for businesses to be more sustainable. Rogue Maps is both an app and a website. Although the initial focus is the Rogue Valley,  Rogue Maps is a global meeting place to access sustainability as a lifestyle for everyone.
-        %p Everyone loves treasure and Pirates are considered the greatest treasure hunters. Rogue Maps is your guide to sustainable treasures. Our greatest treasure is our’s and the planet's well being and good health. Although sustainability as a lifestyle is gaining in popularity it is still somewhat of an “Alternative” lifestyle choice. Hence Rogue Maps is an off the beaten path, Pirate themed Treasure Map.
+        
+      .large-4.columns
+        //holds the description section (hopefully next to the logo)
+        .content
+          .sword_content 
+            %h1 Swords Cut It
+            %p The swords are to cut though the crap and get to the true source of knowledge. Plato believed that there is one true source for each thing existing in the physical world. Along those same lines roguemaps.com will help cut through the mountains of fake food and products to get to the true source. 
+          .bg_content 
+            %h1 Sail on the Highways
+            %p The background and main shape and colors are borrowed directly from the U.S. freeway signs. To be honest America is a driving culture. The freeway system is what connects us physically to one another and helps us to get our jobs done and live our lives with the most ease possible in a car based society.
+          .unicorns_content
+            %h1 Unicorns!
+            %p We had to include unicorns because life is very magical.We chose to have two unicorns to express the duality of life and the human condition. The yin and yang of life. True in magic as in all layers of life.
+          .x_content
+            %h1 X Marks The Spot
+            %p X marks the spot on any treasure map. We at Rogue Maps believe the sustainability and health are the greatest of all treasures.  Ultimately Rogue Maps is a treasure map leading you to the treasures of a healthy and sustainable lifestyle.
+        
+
         
         
 
