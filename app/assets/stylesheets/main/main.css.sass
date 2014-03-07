@@ -88,24 +88,28 @@ html, body
  
 //Styles for About page 
 .wrapper
-  position: absolute
-  top: 0
   background: rgba(243, 248, 252, .85)
+
+.company
+  position: relative
+  top: -9px
  
 .about_content
-  height: 100%
+  .logo_side
+    padding-left: 20px
+    background-color: rgba(0,0,0, .45)
+    overflow: hidden
+  
+  .desc
+    overflow: hidden
+    padding: 0px 40px 0
+    
 
-  h2
-  text-align: center
-  padding: 0 5px 0px 5px
-  h1
+  h1, h2
     text-align: center
   p
     text-align: left
     text-indent: 50px
-  
-  .about-logo
-    border: black solid 2px
     
   .grid
     height: 580px
@@ -114,14 +118,6 @@ html, body
     background: image_url('about_logo.png')
     background-position: center center
     background-repeat: no-repeat
-    .sword:hover ~ .ctent
-      background: green
-      display: block
-    .ctent
-      height: 100%
-      width: 100%
-      background: red
-      display: none
 
     .inner
       height: 33.33%
