@@ -2,8 +2,9 @@
 
   %nav.top-bar{data: {topbar: true} }
     %ul.title-area
-      %li
+      %li{:id => "logo"}
         =link_to image_tag('logo.png'), root_path, class: 'logo'
+      %li{:id => "logo_txt"}
         Your Guide to Sustainable Treasures
 
     %section.top-bar-section
