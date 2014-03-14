@@ -19,7 +19,7 @@ class City < ActiveRecord::Base
     unless states.empty?
       by_state(states).by_name(q)
     else
-      return self.by_name(q)
+      by_name(q)
     end
 
   end
@@ -28,7 +28,7 @@ class City < ActiveRecord::Base
     unless name.blank?
       where("cities.name % ?", name).order("similarity(cities.name, '#{name}') DESC")
     else
-      []
+      City.none
     end
   end
 
