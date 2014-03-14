@@ -11,7 +11,7 @@ Admin =
     city = $('#business_city_id option:selected').text()
     addr = $('#business_formatted_address').val()
     geocoder.geocode address: addr + city, (results, status) ->
-      console.log status + results
+      console.log results
       if status == google.maps.GeocoderStatus.OK
         $('#business_lat').val results[0].geometry.location.lat()
         $('#business_lng').val results[0].geometry.location.lng()
