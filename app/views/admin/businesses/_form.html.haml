@@ -43,7 +43,7 @@
     .row.large-10.large-centered.columns
       =f.label :formatted_address
       =f.text_field :formatted_address
-      %button.button{href: '#', onclick: 'Admin.geocode_biz()'}
+      %a.button{href: '#', onclick: 'Admin.geocode_biz()'}
         Geocode
 
     .row.large-10.large-centered.columns
