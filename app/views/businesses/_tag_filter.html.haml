@@ -1,6 +1,6 @@
 .tag-filter
   %form#tag-filter.custom
-    %ul.large-12.columns{class: "small-block-grid-#{Tag.filterable.count/2} large-block-grid-#{Tag.filterable.count}"}
+    %ul.large-12.columns
       -Tag.filterable.each do |tag|
         %li
           =label_tag tag.name do

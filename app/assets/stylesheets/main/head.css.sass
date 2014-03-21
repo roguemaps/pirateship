@@ -1,6 +1,12 @@
-  
+$top-padding: 8px  
+
+.top-bar
+  padding-top: $top-padding
+  overflow: visible
 .title-area
   display: inline
+  margin-top: -$top-padding
+  float: left
   .logo
     padding: 5px, 0px, 5px, 0px
     
@@ -12,37 +18,56 @@
     line-height: 2.5em
     vertical-align: top
 
+
   #logo_txt
     display: none
-    +breakpoint(760px)
+    +breakpoint(980px)
       display: inline
 
 
 .top-bar-section 
-
+  +transition(none)
+  left: 0 !important
   ul
     background: none
+    width: auto
+    height: auto !important
+    display: inline
+    clear: right
+    li
+      float: left
    
   li a:not(.button)
     background: none
-    line-height: 1.9em
+    line-height: 1
     font-family: $heading-font
+    padding: 0 10px 0
     &:hover
       background: none
 
-  &.search
-    ul
-      display: block
-      margin-left: 35%
-      margin-top: .5%
 
-  form.search
+  &.search
     font-size: 18px
+    ul
+
+      +breakpoint(980px)
+        clear: none
+      +breakpoint(1200px)
+        margin-right: 20px
     li
       padding: 0 3px
+
+
+  form.search
+  
     label
       font-weight: bold
-      padding-top: 10px
+      // padding-top: 10px
+      padding: 0 0 0
+    input
+      top: 0px
+      font-size: .875em
+      line-height: 2em
     .submit
       cursor: pointer
       height: 28px
