@@ -38,8 +38,6 @@
 
   .new-business-form
     = form_for([:admin, Business.new], remote: true) do |f|
-      =f.hidden_field :lat
-      =f.hidden_field :lng
       .row
         .large-1.column
           =f.submit "Create", class: 'button'
@@ -56,6 +54,9 @@
           =text_field_tag :city_name
 
         .column
+      .row
+        =f.hidden_field :lat
+        =f.hidden_field :lng
   .search-results
 
     

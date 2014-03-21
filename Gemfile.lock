@@ -32,6 +32,9 @@ GEM
       json (~> 1.4)
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
+    breakpoint (2.0.7)
+      compass (>= 0.12.1)
+      sass (>= 3.2.0)
     builder (3.1.4)
     celluloid (0.15.2)
       timers (~> 1.1.0)
@@ -220,6 +223,7 @@ PLATFORMS
 
 DEPENDENCIES
   aws-sdk
+  breakpoint
   coffee-rails (~> 4.0.0)
   compass-rails
   debugger

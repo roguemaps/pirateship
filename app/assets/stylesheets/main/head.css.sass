@@ -1,0 +1,49 @@
+  
+.title-area
+  display: inline
+  .logo
+    padding: 5px, 0px, 5px, 0px
+    
+  li
+    font-family: $heading-font
+    padding-right: 10px
+    font-size: 1.5em
+    display: inline
+    line-height: 2.5em
+    vertical-align: top
+
+  #logo_txt
+    display: none
+    +breakpoint(760px)
+      display: inline
+
+
+.top-bar-section 
+
+  ul
+    background: none
+   
+  li a:not(.button)
+    background: none
+    line-height: 1.9em
+    font-family: $heading-font
+    &:hover
+      background: none
+
+  &.search
+    ul
+      display: block
+      margin-left: 35%
+      margin-top: .5%
+
+  form.search
+    font-size: 18px
+    li
+      padding: 0 3px
+    label
+      font-weight: bold
+      padding-top: 10px
+    .submit
+      cursor: pointer
+      height: 28px
+      outline: none

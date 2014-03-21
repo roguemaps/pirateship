@@ -17,6 +17,7 @@ gem 'turbolinks'
 
 gem 'compass-rails'
 gem 'zurb-foundation', '~> 4.0.0'
+gem 'breakpoint'
 
 gem "seedbank"
 
