@@ -32,6 +32,10 @@
   -if content_for?(:scripts)
     :javascript
       #{yield(:scripts)}
+
+  -if Rails.env.production?
+    :javascript
+      #{render '/layouts/ga.js'}
       
 
 
