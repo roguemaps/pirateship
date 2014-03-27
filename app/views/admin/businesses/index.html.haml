@@ -55,8 +55,11 @@
 
         .column
       .row
-        =f.hidden_field :lat
-        =f.hidden_field :lng
+        .large-3.large-offset-1.column
+          =f.text_field :lat
+        .large-3.column
+          =f.text_field :lng
+        .column
   .search-results
 
     
