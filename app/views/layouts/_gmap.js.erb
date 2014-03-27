@@ -1,6 +1,6 @@
 <% places = false if local_assigns[:places].nil? %>
 (function() {
   var e = document.createElement('script'); e.async = true; e.type = 'text/javascript';
-  e.src = document.location.protocol + "//maps.googleapis.com/maps/api/js?<%== if places then 'libraries=places&' end%>v=3.exp&sensor=false&callback=Rmap.initialize";
+  e.src = document.location.protocol + "//maps.googleapis.com/maps/api/js?<%== if Rails.env.production? then 'key=AIzaSyCSxvOOoFciWoDm_N1n_m9LiRhPJ4rxLx0&' end%><%== if places then 'libraries=places&' end%>v=3.exp&sensor=false&callback=Rmap.initialize";
   document.body.appendChild(e);
 }());
