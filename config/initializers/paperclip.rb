@@ -1,1 +1,0 @@
-Paperclip::Attachment.default_options[:url] = 'roguemaps.s3.amazonaws.com'
