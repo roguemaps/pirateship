@@ -3,6 +3,7 @@ ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
+gem "rack-timeout"
 
 # Use postgres as the database for Active Record
 gem 'pg'
@@ -22,9 +23,6 @@ gem 'breakpoint'
 gem "seedbank"
 
 gem "paperclip", "~> 3.5.1"
-gem 'aws-sdk', group: :production
-gem 'rails_12factor', group: :production
-
 gem 'pg_search'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -41,9 +39,6 @@ end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
@@ -58,4 +53,10 @@ group :development do
   gem 'guard-livereload'
   gem 'rb-fsevent'
   gem 'rack-livereload'
+end
+
+group :production do
+  gem 'aws-sdk'
+  gem 'rails_12factor'
+  gem 'unicorn'
 end
