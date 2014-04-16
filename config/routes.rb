@@ -4,6 +4,7 @@ Pirateship::Application.routes.draw do
     resources :states
     resources :countries
     resources :businesses
+    resources :tags
   end
 
   resources :businesses do
