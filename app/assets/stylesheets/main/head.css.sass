@@ -24,6 +24,10 @@ nav
 
   .logo
     padding: 5px, 0px, 5px, 0px
+    position: relative
+    z-index: 9
+    +breakpoint(0 640px)
+      width: 80px
     
   li
     font-family: $heading-font
@@ -55,8 +59,8 @@ nav
 
   &.search
     font-size: 16px
-    ul
 
+    ul
       +breakpoint(980px)
         clear: none
       +breakpoint(1200px)
@@ -64,6 +68,9 @@ nav
     li
       padding: 0 3px
 
+    label
+      +breakpoint(0 640px)
+        display: none
 
   form.search
   
