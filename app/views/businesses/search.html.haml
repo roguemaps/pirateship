@@ -10,9 +10,9 @@
 
     -@businesses.each do |business|
       .business.row{data: {lat: business.lat, lng: business.lng}}
-        .large-2.column
+        .small-2.column
           =image_tag (business.profile_pic.url(:medium)), class: "thumb"
-        .large-10.column
+        .small-10.column
 
           %hgroup.row
             .small-9.column

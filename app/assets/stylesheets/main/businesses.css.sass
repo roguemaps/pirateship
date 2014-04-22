@@ -24,19 +24,35 @@ body.businesses
     background: rgba(0, 0, 0, .45)
     height: 35px
     width: 100%
-    margin-top: -35px
     overflow: hidden
+    position: absolute
+    top: 65px
+    +breakpoint(0 1100px)
+      overflow: visible
+      height: 0px
   
   .tag-filter
     position: relative
     float: right
     z-index: 10000
     width: 87%
-
     li
       padding: 0 .5em
       display: inline-block
       float: right
+
+    
+    .filter-dropdown
+      float: right
+      +breakpoint(1100px)
+        display: none
+    +breakpoint(0px 1100px)
+      #filter-tags
+        +dropdown-container()
+        li
+          +dropdown-style()
+          display: block
+          float: none
 
   .business
     background: rgba(243, 248, 252, .65)

@@ -1,6 +1,8 @@
 .tag-filter
+
   %form#tag-filter.custom
-    %ul.large-12.columns
+    %a.filter-dropdown{href: "#", data: {dropdown: "filter-tags"}} Filters
+    %ul#filter-tags.large-12.columns{data: {dropdown: {content: true}}}
       -Tag.filterable.each do |tag|
         %li
           =label_tag tag.name do
