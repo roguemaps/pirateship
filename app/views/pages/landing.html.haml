@@ -5,7 +5,7 @@
 .helper.show-for-medium-up
 .main.row
   .large-8.small-centered.columns.row
-    =form_tag search_businesses_path, class: 'search' do
+    =form_tag search_businesses_path, method: 'get', class: 'search' do
       .large-5.columns
         =text_field_tag :q, nil, placeholder:'What'
       .large-5.columns

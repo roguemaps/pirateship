@@ -4,7 +4,8 @@ class BusinessesController < ApplicationController
     set_search_params
 
     # @businesses = Business.active.by_city(City.search('ashland oregon')).search('food')
-    @businesses = Business.active.by_city(City.search(@location)).tagged_with_all(@filter_tags).search(@q)
+    search = Business.active.by_city(City.search(@location)).tagged_with_all(@filter_tags).search(@q)
+    @businesses = search.paginate(:page => @page, per_page: 10)
   
   end
 
@@ -15,8 +16,9 @@ class BusinessesController < ApplicationController
   private
 
     def set_search_params
-      search_params = params.permit(:location, :q, :filter_tags)
+      search_params = params.permit(:location, :q, :filter_tags, :page)
 
+      @page = params[:page]
       @location = search_params[:location]
       @q = search_params[:q]
 

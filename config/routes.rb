@@ -9,7 +9,7 @@ Pirateship::Application.routes.draw do
 
   resources :businesses do
     collection do
-      post :search
+      get :search
     end
   end
 
