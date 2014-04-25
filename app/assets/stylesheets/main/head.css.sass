@@ -26,8 +26,9 @@ nav
     padding: 5px, 0px, 5px, 0px
     position: relative
     z-index: 9
-    +breakpoint(0 640px)
-      width: 80px
+    img
+      +breakpoint(0 640px)
+        width: 80px
     
   li
     font-family: $heading-font
@@ -55,6 +56,50 @@ nav
       padding: 0 10px 0
       &:hover
         background: none
+
+  .menu-icon
+    +breakpoint(640px)
+      display: none
+
+    width: 34px
+    height: 34px
+    a
+      width: 34px
+      height: 34px
+      line-height: 33px
+      padding: 0
+      color: black
+      display: block
+
+      span
+        position: absolute
+        display: block
+        width: 16px
+        height: 0
+        +box-shadow(0 10px 0 1px black, 0 16px 0 1px black, 0 22px 0 1px black)
+
+  #main-menu
+    +breakpoint(0 640px)
+      +dropdown-container()
+      background: none
+      border: none
+      z-index: 9999
+      &:before, &:after
+        border: none
+        background: transparent
+      ul
+        background: white
+
+      li
+        +dropdown-style()
+        display: block
+        float: none
+        text-align: right
+        a
+          font-family: $body-font-family
+          font-size: 18px
+          font-weight: bold
+
 
 
   &.search

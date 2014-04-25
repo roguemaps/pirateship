@@ -9,11 +9,15 @@
         Your Guide to Sustainable Treasures
 
     %section.top-section
-      %ul.right
-        %li
-          =link_to "About", "/pages/about"
-        %li
-          =mail_to "contact@roguemaps.com", "Contact"
+      .menu-icon
+        %a{data: {dropdown: 'main-menu'}}
+          %span
+      #main-menu{data: {dropdown: {content: true}}}
+        %ul.right
+          %li
+            =link_to "About", "/pages/about"
+          %li
+            =mail_to "contact@roguemaps.com", "Contact"
           
     %section.top-section.search
       =render 'shared/search'         
