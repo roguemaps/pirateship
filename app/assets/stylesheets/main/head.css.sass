@@ -104,21 +104,29 @@ nav
 
   &.search
     font-size: 16px
+    +breakpoint(0 550px)
+      position: absolute
+      left: 100px
+      right: 40px
 
     ul
+      width: 100%
       +breakpoint(980px)
         clear: none
       +breakpoint(1200px)
         margin-right: 20px
     li
       padding: 0 3px
-
+      display: block
+      float: none
+      +breakpoint(550px)
+        display: inline
+        float: left
     label
       +breakpoint(0 640px)
         display: none
 
-  form.search
-  
+  form.search  
     label
       font-weight: bold
       padding: 0 0 0
@@ -127,7 +135,15 @@ nav
       top: 0px
       font-size: .875em
       line-height: 2em
-    .submit
+      +breakpoint(0 550px)
+        margin-bottom: .25em
+    input.submit
       cursor: pointer
-      height: 28px
+      height: 26px
       outline: none
+
+      +breakpoint(0 550px)
+        position: relative
+        top: -30px
+        right: -35px
+        float: right
