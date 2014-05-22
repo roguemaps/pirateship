@@ -10,15 +10,15 @@
 
     -@businesses.each do |business|
       .business.row{data: {lat: business.lat, lng: business.lng}}
-        .large-2.column
+        .small-2.column
           =image_tag (business.profile_pic.url(:medium)), class: "thumb"
-        .large-10.column
+        .small-10.column
 
           %hgroup.row
-            .small-9.column
+            .large-9.column
               %h2
                 =link_to business.name, business_path(business), class: 'business-name'
-            .small-3.column
+            .large-3.column
               %h3= business.category
           .description= business.description
           .import_info
