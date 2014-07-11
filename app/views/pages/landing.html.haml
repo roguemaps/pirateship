@@ -5,6 +5,10 @@
 .helper.show-for-medium-up
 .main.row
   .large-8.small-centered.columns.row
+    .disclaimer
+      %p Ahoy!! Currently we be sailing in the Rogue Valley in Southern Oregon. Starting with Ashland Oregon, we be adding new businesses as we grow. 
+      %p As we be plotting the next course, we be swabbing the deck. So, if there's a local sustainable business that be missin, hail the crew via the <span style="color: red"><a href="mailto:info@roguemaps.com?Subject=Hailing%20the%20crew"></a></span> link above. We'll do the rest. Arrr!
+  .large-8.small-centered.columns.row
     =form_tag search_businesses_path, method: 'get', class: 'search' do
       .large-5.columns
         =text_field_tag :q, nil, placeholder:'What'
