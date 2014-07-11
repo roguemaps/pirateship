@@ -5,9 +5,12 @@
 .helper.show-for-medium-up
 .main.row
   .large-8.small-centered.columns.row
-    .disclaimer
-      %p Ahoy!! Currently we arr sailing in the Rogue Valley in Southern Oregon. Begining with Ashland Oregon, we be adding new businesses as we grow. 
-      %p We arr plotting our course and swabbing the deck. If y'ad like t'e add a sustainable business, hail the crew via the <a href="mailto:info@roguemaps.com?Subject=Hailing%20the%20crew"><span style="color: red">Contact</span></a> link above.
+    .disclaimer.show-for-medium-up.large-10
+      %p Ahoy!!! Currently we arrr setting sail in the Rogue Valley in Southern Oregon. 
+      %p Beginning in Ashland Oregon, we be adding new businesses as we grow. 
+      %p We arrr plotting our course and swabbing the deck. If y'ad like t'e add a sustainable business, 
+      %p hail the crew via the <a href="mailto:info@roguemaps.com?Subject=Hailing%20the%20crew"><span style="color: red">Contact</span></a> link above. 
+      %p Meanwhile explore what there is by clicking on ye ol' spyglass below. 
   .large-8.small-centered.columns.row
     =form_tag search_businesses_path, method: 'get', class: 'search' do
       .large-5.columns
