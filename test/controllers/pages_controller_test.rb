@@ -8,4 +8,9 @@ class PagesControllerTest < ActionController::TestCase
     assert_template 'landing'
   end
   
+  def test_about
+    get :about
+    assert_response :success
+    assert_template 'about'
+  
 end
