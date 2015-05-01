@@ -43,8 +43,8 @@ end
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
-# Use debugger
-gem 'debugger', group: [:development, :test]
+# Use byebug
+gem 'byebug', group: [:development, :test]
 
 group :development do
   gem 'rails-admin-scaffold'

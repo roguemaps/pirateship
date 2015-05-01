@@ -6,6 +6,8 @@
 .results.row
   .map.large-5.columns.show-for-medium-up
     #map-canvas
+    
+  
   .businesses.large-7.column
 
     -@businesses.each do |business|
@@ -16,7 +18,7 @@
 
           %hgroup.row
             .large-9.column
-              %h2
+              %h2{:id=> "b_link"}
                 =link_to business.name, business_path(business), class: 'business-name'
             .large-3.column
               %h3= business.category
@@ -24,5 +26,5 @@
           .import_info
             %span= business.formatted_address
             %span= business.phone
-
+      
     =will_paginate @businesses

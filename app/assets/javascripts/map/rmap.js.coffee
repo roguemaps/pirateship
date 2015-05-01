@@ -9,12 +9,11 @@ Rmap =
       zoomControlOptions:
         # style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR
         position: google.maps.ControlPosition.LEFT_TOP
+      scrollwheel:false; 
       #panControlOptions:
       #  position: google.maps.ControlPosition.LEFT_TOP
     
     
-
-
     @bounds = new google.maps.LatLngBounds()
 
     unless $('#map-canvas').length = 0
@@ -29,13 +28,26 @@ Rmap =
           icon: 
             url: image_path('map_marker.png')
             scaledSize: new google.maps.Size(25, 25)
-            
-
+        
+        #b_link = document.getElementById('b_link')
+        google.maps.event.addListener marker, 'mouseover', ->
+          #Change the marker icon
+          marker.setIcon url: image_path('map_marker_hover.png')
+            #url: image_path('map_marker_hover.png')
+          return
+        google.maps.event.addListener marker, 'mouseout', ->
+          #Change the marker icon back
+          marker.setIcon 
+            url: image_path('map_marker.png')
+            scaledSize: google.maps.Size(25,25)
+          return
+              
         Rmap.bounds.extend latlng
 
       unless Rmap.bounds.isEmpty()
         Rmap.map.fitBounds Rmap.bounds
 
-
-
 window.Rmap = Rmap
+
+
+
