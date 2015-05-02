@@ -11,14 +11,14 @@
   .businesses.large-7.column
 
     -@businesses.each do |business|
-      .business.row{data: {lat: business.lat, lng: business.lng}}
+      .business.row{data: {lat: business.lat, lng: business.lng}, :id=> business.name}
         .small-2.column
           =image_tag (business.profile_pic.url(:medium)), class: "thumb"
         .small-10.column
 
           %hgroup.row
             .large-9.column
-              %h2{:id=> business.name}
+              %h2
                 =link_to business.name, business_path(business), class: 'business-name'
             .large-3.column
               %h3= business.category

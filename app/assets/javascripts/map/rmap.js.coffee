@@ -30,7 +30,6 @@ Rmap =
         google.maps.event.addDomListener document.getElementById($(this).find('.business-name').text()), 'mouseover', ->
           #Change the marker icon
           marker.setIcon url: image_path('marker_alt.png')
-          scaledSize: google.maps.Size(10, 10)
           return
           
         google.maps.event.addDomListener document.getElementById($(this).find('.business-name').text()), 'mouseout', ->
