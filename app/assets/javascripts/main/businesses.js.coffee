@@ -12,3 +12,7 @@ Rsearch =
       $('form.search').submit()
 
 window.Rsearch = Rsearch
+
+$('.business row').hover ->
+  $(this).toggleClass '.business_hover'
+  return
