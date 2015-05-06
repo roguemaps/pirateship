@@ -27,15 +27,15 @@ Rmap =
           title: $(this).find('.business-name').text()
           icon: 
             url: image_path('map_marker.png')
-        google.maps.event.addDomListener document.getElementById($(this).find('.business-name').text()), 'mouseover', ->
+       # google.maps.event.addDomListener document.getElementById($(this).find('.business-name').text()), 'mouseover', ->
           #Change the marker icon
-          marker.setIcon url: image_path('marker_alt.png')
-          return
+        #  marker.setIcon url: image_path('marker_alt.png')
+         # return
           
-        google.maps.event.addDomListener document.getElementById($(this).find('.business-name').text()), 'mouseout', ->
+       # google.maps.event.addDomListener document.getElementById($(this).find('.business-name').text()), 'mouseout', ->
           #Change the marker icon back
-          marker.setIcon url: image_path('map_marker.png')
-          return
+        #  marker.setIcon url: image_path('map_marker.png')
+         # return
               
         Rmap.bounds.extend latlng
 
