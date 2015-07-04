@@ -30,8 +30,6 @@ gem 'will_paginate', '~> 3.0'
 # gem 'therubyracer', platforms: :ruby
 
 
-
-
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -57,7 +55,7 @@ group :development do
 end
 
 group :production do
-  gem 'aws-sdk'
+  gem 'aws-sdk', '< 2.0'
   gem 'rails_12factor'
   gem 'unicorn'
 end
