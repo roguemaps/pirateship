@@ -6,9 +6,9 @@ class Business < ActiveRecord::Base
   validates_presence_of :city_id
 
   has_attached_file :profile_pic, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => 'business_thumb_placeholder.png'
-
+  #cities.collect(&:id)
   scope :active, -> {where active: true}
-  scope :in_cities, lambda { |cities| joins(:city).where('cities.id IN (?)', cities) }
+  scope :in_cities, lambda { |cities| joins(:city).where('cities.id IN (?)', cities.pluck(:id)) }
 
   include PgSearch
   pg_search_scope :search_text, 

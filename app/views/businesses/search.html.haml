@@ -15,7 +15,7 @@
         .small-2.column
           =image_tag (business.profile_pic.url(:medium)), class: "thumb"
         .small-10.column
-
+        
           %hgroup.row
             .large-9.column
               %h2
@@ -26,5 +26,5 @@
           .import_info
             %span= business.formatted_address
             %span= business.phone
-      
+            
     =will_paginate @businesses
