@@ -18,6 +18,7 @@ Pirateship::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'pages#landing'
+  #root 'businesses#show.html.haml'
 
 
   # Example of regular route:

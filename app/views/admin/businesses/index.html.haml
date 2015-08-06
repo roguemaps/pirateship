@@ -1,15 +1,16 @@
 %h1 Listing businesses
 
-%table
-  %tr
-    %th City
-    %th Name
-    %th Category
-    %th Address
-    %th Phone
-    %th Active?
-    %th
-    %th
+%table#results.tablesorter
+  %thead
+    %tr
+      %th City
+      %th Name
+      %th Category
+      %th Address
+      %th Phone
+      %th Active?
+      %th
+      %th
 
   - @businesses.each do |business|
     %tr

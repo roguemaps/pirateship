@@ -46,7 +46,6 @@ Admin =
       win.document.write result
       win.document.close()
       
-
 window.Admin = Admin
 
 $ ->

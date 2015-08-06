@@ -18,3 +18,4 @@
 //= require_tree ./admin
 
 $(document).foundation();
+
