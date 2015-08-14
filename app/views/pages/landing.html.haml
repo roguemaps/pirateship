@@ -2,20 +2,32 @@
 - title 'Welcome'
 
 =render 'shared/head'
+.tag-filter-bg
+  =render 'tag_filter'
    
 .results.row
   .map.large-4.columns.show-for-medium-up
     #map-canvas
-  - @businesses.each do |business|
-    %tr
-      %td= business.city.city_display
-      %td= link_to business.name, edit_admin_business_path(business)
-      %td= business.category
-      %td= business.formatted_address
-      %td= business.phone
-      %td= business.active? ? 'yes' : 'no'
-      %td= link_to 'Show', business
-      %td= link_to 'Destroy', [:admin, business], :method => :delete, :data => { :confirm => 'Are you sure?' }
+  .businesses.large-7.column
+
+    -@businesses.each do |business|
+      .business.row{data: {lat: business.lat, lng: business.lng}, :id=> business.name}
+        .small-2.column
+          =image_tag (business.profile_pic.url(:medium)), class: "thumb"
+        .small-10.column
+        
+          %hgroup.row
+            .large-9.column
+              %h2
+                =link_to business.name, business_path(business), class: 'business-name'
+            .large-3.column
+              %h3= business.category
+          .description= business.description
+          .import_info
+            %span= business.formatted_address
+            %span= business.phone
+            
+    =will_paginate @businesses
 
 .main.row  
   .large-8.small-centered.columns.row

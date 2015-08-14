@@ -1,5 +1,5 @@
 class BusinessesController < ApplicationController
-
+  
   def search
     set_search_params
 
@@ -7,10 +7,6 @@ class BusinessesController < ApplicationController
     search = Business.active.by_city(City.search(@location)).tagged_with_all(@filter_tags).search(@q)
     @businesses = search.paginate(:page => @page, per_page: 10)
   
-  end
-
-  def show
-    @business = Business.find(params[:id])
   end
 
   private
