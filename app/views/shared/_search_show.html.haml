@@ -1,0 +1,28 @@
+-content_for(:scripts){render '/layouts/gmap.js'}
+=render 'shared/head'
+.tag-filter-bg
+  =render 'tag_filter'
+
+.results.row
+  .map.large-5.columns.show-for-medium-up
+    #map-canvas
+  .businesses.large-7.column
+
+    -@businesses.each do |business|
+      .business.row{data: {lat: business.lat, lng: business.lng}, :id=> business.name}
+        .small-2.column
+          =image_tag (business.profile_pic.url(:medium)), class: "thumb"
+        .small-10.column
+        
+          %hgroup.row
+            .large-9.column
+              %h2
+                =link_to business.name, business_path(business), class: 'business-name'
+            .large-3.column
+              %h3= business.category
+          .description= business.description
+          .import_info
+            %span= business.formatted_address
+            %span= business.phone
+            
+    =will_paginate @businesses
