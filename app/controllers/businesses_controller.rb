@@ -26,7 +26,7 @@ class BusinessesController < ApplicationController
         []
       else
         tag_list = search_params[:filter_tags].split(",").map &:strip
-        Tag.find_all_by_name(tag_list)
+        Tag.where(name: tag_list)
       end
     end
 end
