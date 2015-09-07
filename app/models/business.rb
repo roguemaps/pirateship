@@ -49,7 +49,7 @@ class Business < ActiveRecord::Base
   end
   def self.tagged_with_all(tag_list)
     unless tag_list.empty?
-      joins(:tags).where(tags: {id: tag_list }).group("businesses.id")
+      joins(:tags).where(tags: {id: tag_list })
     else
       all
     end
