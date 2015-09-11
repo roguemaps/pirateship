@@ -34,6 +34,11 @@ class Business < ActiveRecord::Base
 
   def self.search(q)
     unless q.empty?
+      $group_text = "businesses.id" + "," + " pg_search_businesses.rank"
+    else
+      $group_text = "businesses.id"
+    end
+    unless q.empty?
       search_text(q)
     else
       all
@@ -47,9 +52,10 @@ class Business < ActiveRecord::Base
       all
     end
   end
+  
   def self.tagged_with_all(tag_list)
     unless tag_list.empty?
-      joins(:tags).where(tags: {id: tag_list }).group("businesses.id", "pg_search_businesses.rank").having("count(*) = #{tag_list.size}")
+      joins(:tags).where(tags: {id: tag_list }).group($group_text).having("count(*) = #{tag_list.size}")
     else
       all
     end
