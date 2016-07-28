@@ -1,7 +1,7 @@
 - title 'Welcome'
 
 =render 'shared/head'
-   
+
 
 .helper.show-for-medium-up
 .main.row
@@ -11,20 +11,19 @@
         =text_field_tag :q, nil, placeholder:'What'
       .large-5.columns
         =text_field_tag :location, nil, placeholder:'Where'
-      
+
       .large-2.columns
         =image_submit_tag 'search_button.png', class: 'submit'
-             
-  .large-8.small-centered.columns.row
-    .disclaimer.show-for-medium-up.large-10
-      %p Ahoy!!! Currently we arrr setting sail in the Rogue Valley in Southern Oregon. 
-      %p Beginning in Ashland Oregon, we be adding new businesses as we grow. 
-      %p We arrr plotting our course and swabbing the deck. If y'ad like t'e add a sustainable business, 
-      %p hail the crew via the <a href="mailto:info@roguemaps.com?Subject=Hailing%20the%20crew"><span style="color: red">Contact</span></a> link above. 
-      %p Meanwhile explore what there is by clicking on ye ol' spyglass. 
-      .disclaim-footer
-        .large-12.columns
-          = link_to 'https://www.facebook.com/RogueMaps', class: 'link' do
-            Like our
-            %span Facebook page
-    
+
+  -# .large-8.small-centered.columns.row
+  -#   .disclaimer.show-for-medium-up.large-10
+  -#     %p Ahoy!!! Currently we arrr setting sail in the Rogue Valley in Southern Oregon.
+  -#     %p Beginning in Ashland Oregon, we be adding new businesses as we grow.
+  -#     %p We arrr plotting our course and swabbing the deck. If y'ad like t'e add a sustainable business,
+  -#     %p hail the crew via the <a href="mailto:info@roguemaps.com?Subject=Hailing%20the%20crew"><span style="color: red">Contact</span></a> link above.
+  -#     %p Meanwhile explore what there is by clicking on ye ol' spyglass.
+  -#     .disclaim-footer
+  -#       .large-12.columns
+  -#         = link_to 'https://www.facebook.com/RogueMaps', class: 'link' do
+  -#           Like our
+  -#           %span Facebook page
