@@ -4,12 +4,12 @@
 
 #pages-landing
 
-  .top-section   
+  .top-section
     form.search
       display: none
   .main-container
     height: 100%
-    
+
     .disclaimer
       background-color: #FFFFFF
       padding: 5px
@@ -33,17 +33,24 @@
           color: #FFFFFF
           font-family: $heading-font
           font-size: 1.5em
-    
+
   .helper
     height: 12%
     vertical-align: middle
-    
+
   form.search
     vertical-align: middle
     .submit
       cursor: pointer
       height: 45px
 
+  .informationText
+    font-size: 15pt
+    width: 66%
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 5%
+    @include text-shadow(rgba(red, 0.3) 2px 2px 1px)
 
 #pages-about
 
@@ -56,21 +63,21 @@
     p
       padding-left: 10px
       padding-right: 5px
-      
+
   .top_about
     padding-left: 10px
     padding-right: 10px
-   
+
   .about_content
     .logo_side
       padding-left: 20px
       background-color: rgba(0,0,0, .45)
       overflow: hidden
-    
+
     .desc
       overflow: hidden
       padding: 0px 40px 0
-      
+
 
     h1, h2
       text-align: center
@@ -78,7 +85,7 @@
     p
       text-align: left
       text-indent: 50px
-      
+
     .grid
       height: 580px
       width: 100%
@@ -89,7 +96,7 @@
 
       .inner
         height: 33.33%
-        
+
     .sword_content, .bg_content, .unicorns_content, .x_content
       display: none
     .hover
