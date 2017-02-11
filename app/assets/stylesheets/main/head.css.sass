@@ -1,4 +1,4 @@
-$top-padding: 8px  
+$top-padding: 8px
 
 nav
   padding-top: $top-padding
@@ -27,9 +27,9 @@ nav
     position: relative
     z-index: 9
     img
-      +breakpoint(0 640px)
-        width: 80px
-    
+      // +breakpoint(0 640px)
+      //   width: 80px
+
   li
     font-family: $heading-font
     padding-right: 10px
@@ -45,21 +45,21 @@ nav
       display: inline
 
 
-.top-section 
+.top-section
   float: right
   ul
     display: inline
     li
       background: none
       line-height: 1
-      float: left    
+      float: left
       padding: 0 10px 0
       &:hover
         background: none
 
   .menu-icon
-    +breakpoint(640px)
-      display: none
+    // +breakpoint(640px)
+    //   display: none
 
     width: 34px
     height: 34px
@@ -79,54 +79,54 @@ nav
         +box-shadow(0 10px 0 1px black, 0 16px 0 1px black, 0 22px 0 1px black)
 
   #main-menu
-    +breakpoint(0 640px)
-      +dropdown-container()
-      background: none
-      border: none
-      z-index: 9999
-      &:before, &:after
-        border: none
-        background: transparent
-      ul
-        background: white
-
-      li
-        +dropdown-style()
-        display: block
-        float: none
-        text-align: right
-        a
-          font-family: $body-font-family
-          font-size: 18px
-          font-weight: bold
+    // +breakpoint(0 640px)
+    //   +dropdown-container()
+    //   background: none
+    //   border: none
+    //   z-index: 9999
+    //   &:before, &:after
+    //     border: none
+    //     background: transparent
+    //   ul
+    //     background: white
+    //
+    //   li
+    //     +dropdown-style()
+    //     display: block
+    //     float: none
+    //     text-align: right
+    //     a
+    //       font-family: $body-font-family
+    //       font-size: 18px
+    //       font-weight: bold
 
 
 
   &.search
     font-size: 16px
-    +breakpoint(0 550px)
-      position: absolute
-      left: 100px
-      right: 40px
+    // +breakpoint(0 550px)
+    //   position: absolute
+    //   left: 100px
+    //   right: 40px
 
     ul
       width: 100%
-      +breakpoint(980px)
-        clear: none
-      +breakpoint(1200px)
-        margin-right: 20px
+      // +breakpoint(980px)
+      //   clear: none
+      // +breakpoint(1200px)
+      //   margin-right: 20px
     li
       padding: 0 3px
       display: block
       float: none
-      +breakpoint(550px)
-        display: inline
-        float: left
+      // +breakpoint(550px)
+      //   display: inline
+      //   float: left
     label
-      +breakpoint(0 780px)
-        display: none
+      // +breakpoint(0 780px)
+      //   display: none
 
-  form.search  
+  form.search
     label
       font-weight: bold
       padding: 0 0 0
@@ -135,15 +135,15 @@ nav
       top: 0px
       font-size: .875em
       line-height: 2em
-      +breakpoint(0 550px)
-        margin-bottom: .25em
+      // +breakpoint(0 550px)
+      //   margin-bottom: .25em
     input.submit
       cursor: pointer
       height: 26px
       outline: none
 
-      +breakpoint(0 550px)
-        position: relative
-        top: -30px
-        right: -35px
-        float: right
+      // +breakpoint(0 550px)
+      //   position: relative
+      //   top: -30px
+      //   right: -35px
+      //   float: right
