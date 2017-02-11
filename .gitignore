@@ -21,4 +21,4 @@
 /public/system/*
 
 #Ignore public assets and allow heroku to compile them
-/public/assets/*
+#/public/assets/*
