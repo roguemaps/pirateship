@@ -27,17 +27,17 @@ body.businesses
     overflow: hidden
     position: absolute
     top: 65px
-    // +breakpoint(0 1100px)
-    //   overflow: visible
-    //   height: 0px
+    +breakpoint(0 1100px)
+      overflow: visible
+      height: 0px
 
   .tag-filter
     position: relative
     float: right
     z-index: 11
     width: 87%
-    // +breakpoint(0px 1100px)
-    //   width: 200px
+    +breakpoint(0px 1100px)
+      width: 200px
     li
       padding: 0 .5em
       display: inline-block
@@ -46,21 +46,21 @@ body.businesses
 
     .filter-dropdown
       float: right
-      // +breakpoint(1100px)
-      //   display: none
+      +breakpoint(1100px)
+        display: none
       &.button
         background: none
         border: none
         color: black
         padding: 10px 13px
-    // +breakpoint(0px 1100px)
-    //   #filter-tags
-    //     +dropdown-container()
-    //     width: 400px
-    //     li
-    //       +dropdown-style()
-    //       display: block
-    //       float: none
+    +breakpoint(0px 1100px)
+      #filter-tags
+        +dropdown-container()
+        width: 400px
+        li
+          +dropdown-style()
+          display: block
+          float: none
 
   .business
     background: rgba(243, 248, 252, .65)
@@ -77,10 +77,10 @@ body.businesses
       margin: 0
       font-size: 1em
 
-    // +breakpoint(0 640px)
-    //   & > .column
-    //     padding-left: 5px
-    //     padding-right: 5px
+    +breakpoint(0 640px)
+      & > .column
+        padding-left: 5px
+        padding-right: 5px
 
   .business_hover
     background: black
