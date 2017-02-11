@@ -20,3 +20,5 @@
 # Ignore file uploaded with paperclip
 /public/system/*
 
+#Ignore public assets and allow heroku to compile them
+/public/assets/*
