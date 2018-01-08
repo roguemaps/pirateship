@@ -2,12 +2,17 @@
 -- PostgreSQL database dump
 --
 
+-- Dumped from database version 10.1
+-- Dumped by pg_dump version 10.1
+
 SET statement_timeout = 0;
 SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
 SET client_min_messages = warning;
+SET row_security = off;
 
 --
 -- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: -
@@ -44,20 +49,32 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: businesses; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: ar_internal_metadata; Type: TABLE; Schema: public; Owner: -
+--
+
+CREATE TABLE ar_internal_metadata (
+    key character varying NOT NULL,
+    value character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+--
+-- Name: businesses; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE businesses (
     id integer NOT NULL,
-    name character varying(255),
-    category character varying(255),
-    formatted_address character varying(255),
-    phone character varying(255),
-    website character varying(255),
+    name character varying,
+    category character varying,
+    formatted_address character varying,
+    phone character varying,
+    website character varying,
     description text,
     details text,
     price_level integer,
-    facebook_page character varying(255),
+    facebook_page character varying,
     city_id integer,
     lat numeric(10,6),
     lng numeric(10,6),
@@ -66,9 +83,9 @@ CREATE TABLE businesses (
     updated_by integer DEFAULT 1,
     created_at timestamp without time zone,
     updated_at timestamp without time zone,
-    zipcode character varying(255),
-    profile_pic_file_name character varying(255),
-    profile_pic_content_type character varying(255),
+    zipcode character varying,
+    profile_pic_file_name character varying,
+    profile_pic_content_type character varying,
     profile_pic_file_size integer,
     profile_pic_updated_at timestamp without time zone
 );
@@ -79,6 +96,7 @@ CREATE TABLE businesses (
 --
 
 CREATE SEQUENCE businesses_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -94,7 +112,7 @@ ALTER SEQUENCE businesses_id_seq OWNED BY businesses.id;
 
 
 --
--- Name: businesses_tags; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: businesses_tags; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE businesses_tags (
@@ -104,12 +122,12 @@ CREATE TABLE businesses_tags (
 
 
 --
--- Name: cities; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: cities; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE cities (
     id integer NOT NULL,
-    name character varying(255),
+    name character varying,
     state_id integer,
     country_id integer,
     lat double precision,
@@ -124,6 +142,7 @@ CREATE TABLE cities (
 --
 
 CREATE SEQUENCE cities_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -139,12 +158,12 @@ ALTER SEQUENCE cities_id_seq OWNED BY cities.id;
 
 
 --
--- Name: countries; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: countries; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE countries (
     id integer NOT NULL,
-    name character varying(255),
+    name character varying,
     alpha_2 character varying(2),
     alpha_3 character varying(3),
     "numeric" character varying(3),
@@ -158,6 +177,7 @@ CREATE TABLE countries (
 --
 
 CREATE SEQUENCE countries_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -173,21 +193,21 @@ ALTER SEQUENCE countries_id_seq OWNED BY countries.id;
 
 
 --
--- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE schema_migrations (
-    version character varying(255) NOT NULL
+    version character varying NOT NULL
 );
 
 
 --
--- Name: states; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: states; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE states (
     id integer NOT NULL,
-    name character varying(255),
+    name character varying,
     abbr character varying(5),
     country_id integer,
     created_at timestamp without time zone,
@@ -200,6 +220,7 @@ CREATE TABLE states (
 --
 
 CREATE SEQUENCE states_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -215,12 +236,12 @@ ALTER SEQUENCE states_id_seq OWNED BY states.id;
 
 
 --
--- Name: tags; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+-- Name: tags; Type: TABLE; Schema: public; Owner: -
 --
 
 CREATE TABLE tags (
     id integer NOT NULL,
-    name character varying(255),
+    name character varying,
     filterable boolean DEFAULT false,
     created_at timestamp without time zone,
     updated_at timestamp without time zone
@@ -232,6 +253,7 @@ CREATE TABLE tags (
 --
 
 CREATE SEQUENCE tags_id_seq
+    AS integer
     START WITH 1
     INCREMENT BY 1
     NO MINVALUE
@@ -247,42 +269,50 @@ ALTER SEQUENCE tags_id_seq OWNED BY tags.id;
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: businesses id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY businesses ALTER COLUMN id SET DEFAULT nextval('businesses_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: cities id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY cities ALTER COLUMN id SET DEFAULT nextval('cities_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: countries id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY countries ALTER COLUMN id SET DEFAULT nextval('countries_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: states id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY states ALTER COLUMN id SET DEFAULT nextval('states_id_seq'::regclass);
 
 
 --
--- Name: id; Type: DEFAULT; Schema: public; Owner: -
+-- Name: tags id; Type: DEFAULT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY tags ALTER COLUMN id SET DEFAULT nextval('tags_id_seq'::regclass);
 
 
 --
--- Name: businesses_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: ar_internal_metadata ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY ar_internal_metadata
+    ADD CONSTRAINT ar_internal_metadata_pkey PRIMARY KEY (key);
+
+
+--
+-- Name: businesses businesses_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY businesses
@@ -290,7 +320,7 @@ ALTER TABLE ONLY businesses
 
 
 --
--- Name: cities_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: cities cities_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY cities
@@ -298,7 +328,7 @@ ALTER TABLE ONLY cities
 
 
 --
--- Name: countries_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: countries countries_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY countries
@@ -306,7 +336,15 @@ ALTER TABLE ONLY countries
 
 
 --
--- Name: states_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: schema_migrations schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: -
+--
+
+ALTER TABLE ONLY schema_migrations
+    ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
+
+
+--
+-- Name: states states_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY states
@@ -314,7 +352,7 @@ ALTER TABLE ONLY states
 
 
 --
--- Name: tags_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+-- Name: tags tags_pkey; Type: CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY tags
@@ -322,106 +360,81 @@ ALTER TABLE ONLY tags
 
 
 --
--- Name: index_businesses_on_category; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_businesses_on_category; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_businesses_on_category ON businesses USING btree (category);
 
 
 --
--- Name: index_businesses_on_city_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_businesses_on_city_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_businesses_on_city_id ON businesses USING btree (city_id);
 
 
 --
--- Name: index_businesses_on_name; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_businesses_on_name; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_businesses_on_name ON businesses USING btree (name);
 
 
 --
--- Name: index_businesses_tags_on_business_id_and_tag_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_businesses_tags_on_business_id_and_tag_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_businesses_tags_on_business_id_and_tag_id ON businesses_tags USING btree (business_id, tag_id);
 
 
 --
--- Name: index_businesses_tags_on_tag_id_and_business_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_businesses_tags_on_tag_id_and_business_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_businesses_tags_on_tag_id_and_business_id ON businesses_tags USING btree (tag_id, business_id);
 
 
 --
--- Name: index_cities_on_country_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_cities_on_country_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_cities_on_country_id ON cities USING btree (country_id);
 
 
 --
--- Name: index_cities_on_name; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_cities_on_name; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_cities_on_name ON cities USING gin (name gin_trgm_ops);
 
 
 --
--- Name: index_cities_on_state_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_cities_on_state_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_cities_on_state_id ON cities USING btree (state_id);
 
 
 --
--- Name: index_states_on_country_id; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_states_on_country_id; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_states_on_country_id ON states USING btree (country_id);
 
 
 --
--- Name: index_states_on_name; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+-- Name: index_states_on_name; Type: INDEX; Schema: public; Owner: -
 --
 
 CREATE INDEX index_states_on_name ON states USING btree (name);
 
 
 --
--- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
-
-
---
 -- PostgreSQL database dump complete
 --
 
-SET search_path TO "$user",public;
+SET search_path TO "$user", public;
 
-INSERT INTO schema_migrations (version) VALUES ('0');
+INSERT INTO schema_migrations (version) VALUES ('20131113212035'), ('20131129204235'), ('20131130002848'), ('20131216213117'), ('20140121232942'), ('20140122002544'), ('20140122002607'), ('20140130224157'), ('20140202180502'), ('20140202210631');
 
-INSERT INTO schema_migrations (version) VALUES ('20131113212035');
 
-INSERT INTO schema_migrations (version) VALUES ('20131129204235');
-
-INSERT INTO schema_migrations (version) VALUES ('20131130002848');
-
-INSERT INTO schema_migrations (version) VALUES ('20131216213117');
-
-INSERT INTO schema_migrations (version) VALUES ('20140121232942');
-
-INSERT INTO schema_migrations (version) VALUES ('20140122002544');
-
-INSERT INTO schema_migrations (version) VALUES ('20140122002607');
-
-INSERT INTO schema_migrations (version) VALUES ('20140130224157');
-
-INSERT INTO schema_migrations (version) VALUES ('20140202180502');
-
-INSERT INTO schema_migrations (version) VALUES ('20140202210631');

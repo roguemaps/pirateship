@@ -17,26 +17,23 @@
 
   %title= content_for?(:page_title) ? yield(:page_title) : "Rogue Maps"
 
-  = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
-  = javascript_include_tag "vendor/custom.modernizr"
-  = csrf_meta_tag
+  -# = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+  -# = javascript_include_tag "vendor/custom.modernizr"
+  -# = csrf_meta_tag
 
-  %link{href: 'http://fonts.googleapis.com/css?family=Jim+Nightshade', rel: 'stylesheet', type: 'text/css'}
+  -# %link{href: 'http://fonts.googleapis.com/css?family=Jim+Nightshade', rel: 'stylesheet', type: 'text/css'}
 
 %body{class: content_for?(:body_classes) ? yield(:body_classes) : body_classes, id: body_id }
   .main-container
     = yield
 
-  = javascript_include_tag "application", "data-turbolinks-track" => true
-  
-  -if content_for?(:scripts)
-    :javascript
-      #{yield(:scripts)}
+  -# = javascript_include_tag "application", "data-turbolinks-track" => true
 
-  -if Rails.env.production?
-    :javascript
-      #{render '/layouts/ga.js'}
-      #{render '/layouts/fb.js'}
-      
+  -# -if content_for?(:scripts)
+  -#   :javascript
+  -#     #{yield(:scripts)}
 
-
+  -# -if Rails.env.production?
+  -#   :javascript
+  -#     #{render '/layouts/ga.js'}
+  -#     #{render '/layouts/fb.js'}

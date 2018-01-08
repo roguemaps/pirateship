@@ -19,4 +19,6 @@
 //= require_tree ./main
 
 
-$(document).foundation();
+// $(document).foundation();
+
+$(function(){ $(document).foundation(); });

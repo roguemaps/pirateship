@@ -1,22 +1,27 @@
 - title 'Welcome'
 
-=render 'shared/head'
-
-
-.helper.show-for-medium-up
 .large-8
   .informationText
-    Enter ‘What’ you are looking for in the 'What Box’ and 'Where' you are looking in the ‘Where Box’. We are currently only servicing the Rogue Valley in Southern Oregon. Please email us any suggestions for businesses. Thank You!
-.main.row
-  .large-8.small-centered.columns.row
-    =form_tag search_businesses_path, method: 'get', class: 'search' do
-      .large-5.columns
-        =text_field_tag :q, nil, placeholder:'What'
-      .large-5.columns
-        =text_field_tag :location, nil, placeholder:'Where'
-
-      .large-2.columns
-        =image_submit_tag 'search_button.png', class: 'submit'
+    %h1
+      We are currently under some major construction. Please check back soon
+-#
+-# =render 'shared/head'
+-#
+-#
+-# .helper.show-for-medium-up
+-# .large-8
+-#   .informationText
+-#     Enter ‘What’ you are looking for in the 'What Box’ and 'Where' you are looking in the ‘Where Box’. We are currently only servicing the Rogue Valley in Southern Oregon. Please email us any suggestions for businesses. Thank You!
+-# .main.row
+-#   .large-8.small-centered.columns.row
+-#     =form_tag search_businesses_path, method: 'get', class: 'search' do
+-#       .large-5.columns
+-#         =text_field_tag :q, nil, placeholder:'What'
+-#       .large-5.columns
+-#         =text_field_tag :location, nil, placeholder:'Where'
+-#
+-#       .large-2.columns
+-#         =image_submit_tag 'search_button.png', class: 'submit'
 
   -# .large-8.small-centered.columns.row
   -#   .disclaimer.show-for-medium-up.large-10

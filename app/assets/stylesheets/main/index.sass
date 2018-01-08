@@ -3,13 +3,16 @@
  *= require_self
  * put site-wide variables before the imports and they will be accessible
  */
- 
-@import compass
-@import breakpoint  
+
+
+
 
 // this imports the foundation mixins
-@import "foundation/foundation-global"
+// @import "foundation/foundation-global"
+@import "compass"
+@import "foundation_and_overrides"
 @import "foundation/components/dropdown"
+@import "breakpoint"
 
 $heading-font: 'Jim Nightshade'
 
@@ -18,4 +21,3 @@ $heading-font: 'Jim Nightshade'
 
 @import pages
 @import businesses
-
