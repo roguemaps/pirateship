@@ -1,0 +1,9 @@
+/* line 3, /Users/jessev/pirateship/app/assets/stylesheets/admin_styles/index.css.sass */
+body {
+  background: none;
+}
+
+/* line 7, /Users/jessev/pirateship/app/assets/stylesheets/admin_styles/index.css.sass */
+#admin-businesses-index .new-business-form {
+  display: none;
+}
